@@ -1,0 +1,6 @@
+[Desktop Entry]
+Encoding=UTF-8
+Exec=/bin/sh -c "[ -n '$XIM_PROGRAM' ] && $XIM_PROGRAM"
+Name=OXIM
+Type=Service
+X-KDE-StartupNotify=false

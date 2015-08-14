@@ -1,0 +1,1736 @@
+2009-05-05 Wind <yc.yan@ossii.com.tw>
+	* configure.ac :
+	   刪除判斷 setup-tool 區段。
+
+	* src/xim/oxim-agent.c src/xim/oxim_main.c src/xim/xim.c:
+	   新增 oxim-agent 公用程式，將 oxim 某些參數移至 oxim-agent 內。
+	
+	* etc/oxim.conf.default etc/oxim.conf.eeepc 
+	   src/xim/gui_msgbox.c src/include/gui.h
+	   src/lib/oxim_config.c src/xim/gui.c
+	   src/xim/gui_tray.c
+	   oxim-agent 新增 -m 參數：可將訊息顯示於新的訊息視窗上。
+
+	* src/xim/gui_status.c :
+	   配合 oxim-agent 新增 -m -i 參數的程式碼變更。
+	   
+	* po/zh_CN.po po/zh_HK.po po/zh_TW.po :
+	   中文化訊息修改。
+
+	* src/include/fkey.h :
+	   增加手寫輸入功能。
+ 
+	* src/include/oximtool.h :
+	   1. 增加 -i -m 的 enum 常數。
+	   2. 增加訊息視窗的 enum 顏色常數。
+	   3. 修改 uint_t 的型態，使 x86_64 環境不會導致誤判。
+	       這個修正主要針對輸入新酷音輸入法時，列表索引因為 sizeof(uint_t)不正確所引發的問題。
+
+	* src/lib/oxim_check_file.c :
+	   oxim_check_cmd_exist：可指定執行檔名稱。
+
+	* src/modules/chewing/chewing.0.3.2.c :
+	   修正當新酷音輸入法鍵盤按鍵選擇漢音時無法輸入的問題。
+
+	* src/xim/gui_menu.c :
+	   選單項目變更。
+
+	* src/xim/xim.c :
+	   修正於 x86_64 環境下以 gtk_immodule 輸入中文字時會沒有游標跟隨功能的問題。  
+
+	* tables/symbol.list :
+	   內容修正。
+
+2009-03-27 Wind <yc.yan@ossii.com.tw>
+	* src/include/oximtool.h :
+	   針對 x86_64 平台修改 uchar_t 的定義方式。
+
+	* src/xim/gui_menu.c :
+	   程式修整。
+
+2009-03-23 Wind <yc.yan@ossii.com.tw>
+	* po/zh_CN.po po/zh_HK.po po/zh_TW.po
+	   src/xim/oxim_main.c :
+	   中文化訊息修改。
+
+	* src/xim/gui.c src/xim/gui_tray.c :
+	   修改 gui_reread_resolution() ，增加判斷static變數使之永遠只執行一次偵測螢幕解析度。
+
+	* src/xim/IMdkit/FrameMgr.c :
+	   避開Emacs第一次啟動時會與oxim相衝突的情況。
+
+2009-03-19 Wind <yc.yan@ossii.com.tw>
+	* configure.ac :
+	   變更版本編號。
+	   移除不必要的函式檢查。
+
+	* po/zh_CN.po po/zh_HK.po po/zh_TW.po 
+	   src/xim/gui_menu.c :
+	   中文化訊息修改。
+
+	* src/xim/gui.c :
+	   修改gui_reread_resolution()：增加XCloseDisplay，使之不會產生memory leak.
+
+	* src/xim/gui_status.c src/xim/oxim_main.c :
+	   增加實驗性質功能： 
+	       oxim -i"一堆文字"
+	   直接將"一堆文字"透過oxim輸出至打字區域。
+ 
+	* tables/symbol.list :
+	   略為變動符號間的排列順序。
+
+	釋出 1.2.2
+
+2009-02-12 Wind <yc.yan@ossii.com.tw>
+	* configure.ac
+	   src/modules/chewing/Makefile.am :
+	  修正判斷新酷音模組版本會誤判的問題。
+
+	* oxim.spec :
+	  內容更新。
+
+	* po/Makefile.in.in :
+	  將不必要的安裝程序移除，包括不必要的gettext相關檔案。
+
+	* src/gtk-immodule/gtkimcontextoxim.c
+	   src/gtk-immodule/gtkimcontextoxim.h src/gtk-immodule/gtkintl.h
+	   src/gtk-immodule/im-oxim.c :
+	  更新支援gtk的輸入法模組相關程式，使支援GTK2。
+
+	* src/xim/gui.c
+	   src/xim/gui_status.c src/xim/gui_tray.c :
+	 修正FC10底下滑鼠指標位置不正確的問題：
+
+2008-12-30 Wind <yc.yan@ossii.com.tw>
+	* oxim-start.sh.in :
+	  增加PREFERENCE_PROGRAM變數使FC10中的輸入法設定程式能夠認得輸入法設定程式。
+
+	釋出 1.2.1
+
+2008-12-24 Wind <yc.yan@ossii.com.tw>
+	* configure.ac oxim.spec :
+	  變更版號。
+
+	* oxim-start.sh.in :
+	  增加DISABLE_IMSETTINGS變數使相容於FC10。
+
+	* panels/defaultkeyboard.xpm po/oxim.pot po/zh_CN.po po/zh_HK.po
+	   po/zh_TW.po src/xim/gui_keyboard.c :
+	  螢幕輸入小鍵盤：將標題文字改為i18n。
+
+	* src/modules/chewing/chewing.0.3.2.c src/modules/chewing/chewing.0.3.2.h:
+	  整理程式碼內容。
+
+2008-12-19 Wind <yc.yan@ossii.com.tw>
+	* po/zh_CN.po po/zh_HK.po po/zh_TW.po
+	   src/xim/gui_symbol.c tables/symbol.list :
+	   修正符號輸入表相關程式，
+	   使符號項目支援i18n。
+
+	* configure.ac src/modules/chewing/Makefile.am
+	   src/modules/chewing/chewing.0.3.2.c (新增)
+	   src/modules/chewing/chewing.0.3.2.h (新增) :
+	   新增支援新酷音0.3.2版本。
+
+2008-12-16 Wind <yc.yan@ossii.com.tw>
+	* autogen.sh :
+	  移除不必要的刪除指令。
+	  某些版本的autoconfig會額外檢查config.rpath有否存在，因此在此以touch指令產生之。
+
+	* configure.ac :
+	  將自動產生oxim.spec的段落拿掉(AC_OUTPUT)，因oxim.spec已改成靜態內容，不需動態產生。
+
+	* src/lib/oxim_module.c src/xim/gui_menu.c :
+	  改變呼叫setlocale第二個傳入參數的值，NULL => ""
+
+	* src/modules/unicode/unicode.c src/xim/gui_symbol.c :
+	  增加return value使語法正規化。
+
+	* src/xim/xim.c :
+	  xim_unset_focus_handler: 修正只以LC_CTYPE設定locale。
+
+	* oxim.spec :
+	  新增。
+
+	* oxim.spec.in :
+	  移除。
+
+2008-12-02 Wind <yc.yan@ossii.com.tw>
+	* Makefile.am :
+	  把oxim.1.gz 更名為oxim.1，因為包RPM時不需包成.gz。
+
+	* configure.ac :
+	  因改以系統環境變數(export)設定，所以去除EXTERNAL_DOWNLOAD_URL指派。
+
+	* oxim.spec.in src/xim/oxim_main.c :
+	  內容變更。
+
+	* etc/oxim.conf.default etc/oxim.conf.eeepc :
+	  因unicode輸入法模組的名稱已支援I18N，所以去除設定檔中的AliasName設定值。
+
+	* po/LINGUAS po/zh_CN.po po/zh_TW.po :
+	  針對多國語系I18N的內容變更。
+	  新增zh_HK語系。
+
+	* src/lib/oxim_check_file.c :
+	  oxim_check_setup_file_exist函式：修改記憶體宣告方式( char *s=strdup(...) => char s[BUFFER_LEN] )
+
+	* src/lib/oxim_config.c :
+	  oxim_external_url函式：由原本的#ifdef var修改成以getenv判斷系統環境變數。
+
+	* src/lib/oxim_module.c :
+	  大幅修改realCname函式。
+
+	* src/modules/chewing/chewing.c src/modules/chewing/chewing2.c
+	  src/modules/unicode/unicode.c :
+	  將各別模組之輸入法名稱予以I18N處理。
+
+	* src/util/oxim-conv/gencin.c :
+	  修改轉換程式，使支援新版cin table。
+	  cin主要針對I18N多語系支援而作修改。
+
+	* src/xim/gui_menu.c tables/cnscj.cin tables/cnsphone.cin :
+	  針對多國語系I18N的內容變更。
+
+	* src/xim/gui_xcin.c :
+	  針對多國語系I18N的內容變更。
+	  修正切換到XCIN輸入風格時，用滑鼠中鍵點輸入視窗有時候造成整個X-Window死當的情況。
+
+2008-11-12 Wind <yc.yan@ossii.com.tw>
+	* src/lib/oxim_module.c :
+	  支援多國語系相關修正。
+
+2008-11-10 Wind <yc.yan@ossii.com.tw>
+	* po/LINGUAS :
+	  新增該檔案，使make時能順利build成功。
+
+2008-11-06 Wind <yc.yan@ossii.com.tw>
+	* src/lib/oxim_module.c src/util/oxim-conv/gencin.c
+	  src/util/oxim-conv/oxim-conv.c :
+	  修改讀取輸入法表格中文名稱的方式，使之支援多國語系。
+
+	* src/include/oximtool.h src/lib/oxim_check_file.c
+	  src/xim/gui_menu.c :
+	  檢查oxim-setup程式，若不存在或不能執行則選單上會隱藏『設定』功能列。
+
+2008-11-04 Wind <yc.yan@ossii.com.tw>
+	* src/lib/oxim_module.c :
+	  當切換輸入法輸入風格（XCIN<->OXIM）時，
+	  ~/.oxim/oxim.conf 裡面的相關設定會被吃掉，
+	  本次更新解決此問題。
+
+2008-10-31 Wind <yc.yan@ossii.com.tw>
+	* src/xim/oxim_main.c :
+	  修改命令列參數接收規則，
+	  使oxim可以接受如下命令：
+	  oxim -h
+
+	 （原先的參數規則必須要額外加任意文字才會正常顯示說明
+	  如：
+	  oxim -hfhw）
+
+	* po/zh_CN.po po/zh_TW.po :
+	  修改命令列說明相關的文字。
+
+	釋出 1.2.0
+
+2008-10-29 Wind <yc.yan@ossii.com.tw>
+	1.新增I18N - zh_TW、zh_CN翻譯訊息檔。
+	2.將oxim-setup移出轉成獨立CVS專案; 該專案名稱為 oxim-setup。
+	3.oxim程式新增 -r 參數，如果oxim程式執行中，則使用該參數可以直接reload oxim。
+	4.修改oxim.spec.in，將qt-immodule、gtk-immodule、unicode-module、chewing-module合併於原套件內。
+	5.新增oxim的man page.
+
+2008-3-1 Firefly <firefly@opendesktop.org.tw>
+	* src/xim/images/sideback.xpm src/xim/images/sideback_l.xpm
+	  src/xim/images/sideback_r.xpm :
+	  改用 Fred 設計的 Panel。
+
+	釋出 1.1.6
+
+2008-2-29 Firefly <firefly@opendesktop.org.tw>
+	* src/xim/xim.c :
+	  修正 locale 為 POSIX 的問題。
+
+2008-2-26 Firefly <firefly@opendesktop.org.tw>
+	* configure.ac src/xim/gui_tray.c :
+	  在 EeePC 中，使用較小的 Tray Icon 圖示。
+
+	釋出 1.1.5
+
+2008-2-22 Firefly <firefly@opendesktop.org.tw>
+	* src/xim/gui_tray.c :
+	  修正 tray icon 閃爍與對齊問題。
+
+2008-2-20 Firefly <firefly@opendesktop.org.tw>
+	* src/xim/gui_tray.c src/xim/gui.c :
+	  系統匣移除時，自動隱藏 tray icon，直到 System Tray 再度出現為止。
+
+2008-2-19 Firefly <firefly@opendesktop.org.tw>
+	釋出 1.1.4。
+
+2008-2-18 Firefly <firefly@opendesktop.org.tw>
+	* src/xim/gui_tray.c :
+	  用新的 tray icon。
+
+	* src/xim/images/oxim_tray.xpm :
+	  新圖示。
+
+2008-2-17 Firefly <firefly@opendesktop.org.tw>
+	* src/xim/gui.c :
+	  判斷是否已經執行中。
+
+	* oxim.spec.in oxim-setup.desktop oxim-setup.png :
+	  新增[開始]─[設定]選單項目。
+
+2008-1-10 Firefly <firefly@opendesktop.org.tw>
+	* etc/oxim.conf.in src/include/gui.h src/include/oximtool.h
+	  src/lib/oxim_config.c src/xim/gui.c src/xim/gui_preedit.c :
+	  增加紀錄是否啟用 On The Spot 輸入風格。
+
+2008-1-8 Firefly <firefly@opendesktop.org.tw>
+	* etc/oxim.conf.in src/include/oximtool.h
+	  src/lib/oxim_config.c src/xim/gui.c src/xim/gui_xcin.c :
+	  增加紀錄是否預設為 XCIN 風格，與視窗位置修正。
+
+2008-1-4 Firefly <firefly@opendesktop.org.tw>
+	* configure.ac src/xim/Makefile.am :
+	  增加檢查 libXtst 機制。
+
+2008-1-3 Firefly <firefly@opendesktop.org.tw>
+	* configure.ac src/xim/Makefile.am :
+	  增加檢查 libXpm 機制。
+
+2008-1-2 Firefly <firefly@opendesktop.org.tw>
+	* src/xim/gui.c :
+	  增加透明圖處理機制。
+
+2008-1-1 Firefly <firefly@opendesktop.org.tw>
+	* src/xim/gui_keyboard.c :
+	  修正透明背景問題。
+
+2007-12-31 Firefly <firefly@opendesktop.org.tw>
+	* src/xim/gui.c :
+	  再次修正 XNextEvent 阻塞問題。
+	  (感謝 Fred 提供 patch)
+
+2007-12-22 Firefly <firefly@opendesktop.org.tw>
+	* src/xim/gui.c :
+	  修正 XNextEvent 阻塞問題。
+	  (感謝 fred 提供 patch)
+
+2007-12-10 Firefly <firefly@opendesktop.org.tw>
+	* autostart-oxim.desktop :
+	  增加編譯給 EeePC 用的檔案。
+
+2007-5-30 Firefly <firefly@opendesktop.org.tw>
+	* src/modules/chewing/chewing.c src/modules/chewing/chewing2.c
+	  src/xim/gui_fixed.c src/xim/gui_xcin.c :
+	  修正新酷音預選字詞時，切換全/半型當掉的問題。
+	  (感謝 ennis 協助)
+
+2007-5-29 Firefly <firefly@opendesktop.org.tw>
+	* src/xim/gui_fixed.c src/xim/gui_preedit.c src/xim/gui_xcin.c :
+	  修正預選字詞時，切換全/半型當掉的問題。
+	  (感謝 ennis 協助)
+
+2007-5-7 Firefly <firefly@opendesktop.org.tw>
+	  釋出 1.1.3。
+
+2007-3-6 Firefly <firefly@opendesktop.org.tw>
+	* include/fkey.h include/gui.h include/oximtool.h
+	  lib/oxim_config.c xim/fkey.c xim/gui.c xim/gui_fixed.c
+	  xim/gui_keyboard.c xim/gui_menu.c xim/gui_preedit.c
+	  xim/gui_status.c xim/gui_symbol.c xim/gui_tray.c
+	  xim/gui_xcin.c xim/xim.c :
+	  修正精簡程式碼，增加固定輸入視窗。
+
+2007-2-10 Firefly <firefly@opendesktop.org.tw>
+	* src/include/gui.h src/include/oxim.h src/xim/gui.c
+	  src/xim/gui_keyboard.c src/xim/gui_menu.c
+	  src/xim/gui_preedit.c src/xim/gui_status.c
+	  src/xim/gui_symbol.c src/xim/gui_tray.c src/xim/gui_xcin.c
+	  src/xim/xim.c src/xim/xim_IC.c :
+	  將 xim 程式碼盡量與 GUI 程式碼分離開來。
+
+2007-2-9 Firefly <firefly@opendesktop.org.tw>
+	* src/include/gui.h src/xim/gui.c src/xim/xim.c src/xim/xim_IC.c :
+	  刪除 winchange 結構與相關程式碼。
+
+2007-2-7 Firefly <firefly@opendesktop.org.tw>
+	* src/include/IC.h src/xim/xim_IC.c :
+	  取消 StatusAttributes 相關的程式碼。
+
+2007-2-2 Firefly <firefly@opendesktop.org.tw>
+	* src/modules/chewing/chewing.c :
+	  修正 libchewing 0.3.091 ChewingConfigData 之 selectAreaLen 改名問題。
+	  這實在很糟糕，重要且公開的結構若隨意更名，會造成其他開發者困擾。
+
+	* src/ogim/Makefile.am src/ogim/gtkintl.h src/ogim/ogim.c :
+	  開始著手設計純 GTK input module。
+
+2007-1-31 Firefly <firefly@opendesktop.org.tw>
+	* src/modules/chewing/chewing.c :
+	  修正新酷音攔截特殊鍵問題。
+
+2007-1-30 Firefly <firefly@opendesktop.org.tw>
+	* configure.ac src/include/IC.h src/xim/xim_IC.c :
+	  修正部份 JAVA 應用程式會卡死的問題。
+
+	* src/xim/xim.c :
+	  xim server 原先只攔截 KeyPress 改成同時攔截 KeyPress 與 KeyRelease。
+
+2007-1-29 Firefly <firefly@opendesktop.org.tw>
+	* src/xim/IMdkit/i18nMethod.c :
+	  OOPS! 當初改太快，把 address.im_addr 打成 address.im_locale。
+
+2007-1-25 Firefly <firefly@opendesktop.org.tw>
+	* configure.ac src/modules/chewing/Makefile.am
+	  src/modules/chewing/chewing2.c :
+	  加入支援 libchewing 0.3.0 之前的程式碼。
+	* ChangeLog :
+	  發佈 1.1.2 版。
+
+2007-1-24 Firefly <firefly@opendesktop.org.tw>
+	* src/xim/IMdkit/i18nMethod.c :
+	  修正 locale buffer 不夠大的問題，改為動態大小。
+
+	* Makefile.am configure.ac oxim.spec.in etc/oxim.conf.in
+	  src/util/oxim-setup/oxim-setup.pro
+	  src/util/oxim-setup/oxim-setup.ui
+	  src/util/oxim-setup/oxim-setup.ui.h tables/Makefile.am 
+	  doc/debian/control src/util/oxim-setup/Makefile.am :
+	  移除詞音支援。
+
+	* doc/debian/oxim-bimsphone.install
+	  src/modules/bimsphone/Makefile.am
+	  src/modules/bimsphone/bimscin.h
+	  src/modules/bimsphone/bimsphone.c
+	  src/modules/bimsphone/bimsphone.h
+	  src/modules/bimsphone/bimspinyin.c
+	  src/util/oxim-setup/bimsphone.ui
+	  src/util/oxim-setup/bimsphone.ui.h tables/bims_pinyin.tab :
+	  移除詞音相關程式碼與檔案。
+
+2007-1-23 Firefly <firefly@opendesktop.org.tw>
+	* src/xim/IMdkit/FrameMgr.c src/xim/IMdkit/IMdkit.h
+	  src/xim/IMdkit/Xi18n.h src/xim/IMdkit/Xtrans.h
+	  src/xim/IMdkit/i18nAttr.c src/xim/IMdkit/i18nClbk.c
+	  src/xim/IMdkit/i18nIMProto.c src/xim/IMdkit/i18nIc.c
+	  src/xim/IMdkit/i18nMethod.c src/xim/IMdkit/i18nPtHdr.c :
+	  解決與 FlashPlayer9 相衝的問題，改用與 SCIM、GCIN 一致的 IMdkit。
+
+	* oxim-start.sh.in :
+	  gtk-query-immodules 指令，優先尋找 64 位元路徑位置。
+
+2006-9-22 Firefly <firefly@opendesktop.org.tw>
+	* configure.ac :
+	  版本 1.1.1。
+
+2006-9-19 Firefly <firefly@opendesktop.org.tw>
+	* src/util/oxim-setup/installim.ui.h :
+	  修正從網路安裝輸入法漏字的問題。
+
+2006-9-13 Firefly <firefly@opendesktop.org.tw>
+	* configure.ac src/modules/chewing/chewing.c :
+	  修正新酷音多餘的程式碼。
+
+	* Makefile.am src/xim/Makefile.am :
+	  修正 make distclean 發生錯誤的問題。
+
+	* src/xim/fkey.c :
+	  增加一個快速鍵 Ctrl+Alt+G : 重送最後一次結果。
+
+2006-9-11 Firefly <firefly@opendesktop.org.tw>
+	* src/modules/chewing/chewing.c :
+	  支援 libchewing 0.3.x 了。
+	  (Thanks Rong-En Fan <rafan@infor.org>)
+
+2006-9-7 Firefly <firefly@opendesktop.org.tw>
+	* src/modules/gen-inp-v1/gen-inp-v1.c
+	  src/modules/gen-inp-v1/gen-inp-v1.h :
+	  增加一個設定項目 Remap，以適應行列輸入法的一級簡碼。
+
+2006-9-6 Firefly <firefly@opendesktop.org.tw>
+	* src/xim/gui.c :
+	  修正不同版本 fontconfig 傳回字型列表不正確的問題。
+
+	* src/modules/gen-inp-v1/gen-inp-v1.c
+	  src/modules/gen-inp-v1/gen-inp-v1.h :
+	  加入注符號檢查設定 BoPoMoFoCheck，避免非注音形式的輸入法套用到注音
+	  符號的檢查規則。
+
+2006-9-1 Firefly <firefly@opendesktop.org.tw>
+	* ChangeLog :
+	  正式釋出 OXIM 1.1.0。
+
+2006-8-30 Firefly <firefly@opendesktop.org.tw>
+	* oxim.spec.in :
+	  修正在某些系統編譯時，無法用 qt* 指示路徑的問題。
+
+2006-8-25 Firefly <firefly@opendesktop.org.tw>
+	* configure.ac :
+	  版本改為 1.0.105。
+
+	* src/util/oxim-conv/gencin.c :
+	  修正讀取 SCIM 表格的相容性，若沒有 key name 的話，直接使用字根字元。
+
+2006-7-26 Firefly <firefly@opendesktop.org.tw>
+	* src/qt-immodule/qoximinputcontext.h :
+	  將 #include <qarray.h> 改為 #include <qmemarray.h>
+
+	* src/include/oximtool.h src/lib/Makefile.am
+	  src/lib/oxim_utf8len.c :
+	  新增 oxim_utf8len(char *utf8str) 函數，用來計算串中真正的 utf8 長度。
+
+	* src/xim/gui_preedit.c :
+	  修正字根為英數字時，顯示在 OnTheSpot 長度錯誤問題。
+
+2006-7-14  Firefly <firefly@opendesktop.org.tw>
+	* tables/symbol.list :
+	  新增易經符號(陰陽魚、八卦、陽爻、陰爻、老陽、少陰、少陽、老陰
+	  以及六十四卦)
+
+2006-7-13  Firefly <firefly@opendesktop.org.tw>
+	* Makefile.am configure.ac oxim-start.sh.in oxim.spec.in :
+	  版本升級為 1.0.103 (1.1.0 rc1)。
+
+2006-7-11  Firefly <firefly@opendesktop.org.tw>
+	* configure.ac oxim-start.sh.in :
+	  新增啟動 OXIM 的 Shell script，這可以免除使用者要經過繁瑣的程序，
+	  才能正確啟動 OXIM，避免新手不知如何設定輸入法的困境。
+
+2006-7-10  Firefly <firefly@opendesktop.org.tw>
+	* src/xim/xim.c src/xim/xim_IC.c :
+	  修正 xim_styles 長度計算錯誤的問題。
+
+2006-7-7  Firefly <firefly@opendesktop.org.tw>
+	* src/xim/gui_preedit.c src/xim/gui_xcin.c :
+	  移除 draw_keystroke_onspot() 函數。
+
+2006-7-6  Firefly <firefly@opendesktop.org.tw>
+	* src/xim/xim.c :
+	  加一個變態設計。
+	  有些程序不知為何，會把 oxim forward 出去的按鍵又 forward 回來
+	  (如 gedit)，形成互相 forward，無止無盡 :-(
+	  只好在這裡加以處理，作法是檢視上一次 forward 與這一次的時間差
+	  精度為百萬分之一秒(沒有人可以打字那麼快吧!)，如果在一定的時間
+	  之內(1% 秒)，就視為重複 forward，此時就吃掉這個按鍵，不再 forward。 
+
+2006-7-5  Firefly <firefly@opendesktop.org.tw>
+	* etc/oxim.conf.in :
+	  刪除表格式輸入法的預設值。
+
+	* src/include/gencin.h src/include/oximtool.h
+	  src/lib/oxim_config.c src/lib/oxim_settings.c
+	  src/lib/oximint.h src/modules/gen-inp-v1/gen-inp-v1.c
+	  src/util/oxim-setup/gencin.ui src/util/oxim-setup/gencin.ui.h
+	  src/util/oxim-setup/oxim-setup.pro
+	  src/util/oxim-setup/oxim-setup.ui.h :
+	  增加讀取、設定新版表格式輸入法相關程式碼。
+
+	* Makefile.am configure.ac src/util/oxim-conv/Makefile.am :
+	  啟用新的 oxim-conv，舊的 oxim2tab 停用。
+
+2006-7-4  Firefly <firefly@opendesktop.org.tw>
+	* src/modules/gen-inp-v1/gen-inp-v1.c
+	  src/modules/gen-inp-v1/gen-inp-v1.h :
+	  新格式表格式輸入法模組完成了。
+
+	* src/include/oximtool.h src/lib/oxim_settings.c :
+	  新增讀取預設的表格輸入法設定函數
+	  settings_t *oxim_system_table_settings(void)
+
+
+2006-6-28  Firefly <firefly@opendesktop.org.tw>
+	* src/modules/gen-inp-v1/gen-inp-v1.c
+	  src/modules/gen-inp-v1/gen-inp-v1.h :
+	  重寫表格輸入法讀取模式，只分兩種模式：一種是直接磁碟 I/O，
+	  另一種是記憶體模式。
+
+	  當表格檔案是壓縮型態時，採用記憶體模式，只有在進入輸入模式後
+	  才會從壓縮檔讀取 offset table 與輸入資料，結束輸入模式後立即
+	  釋放記憶體。
+
+	  若是表格檔沒有壓縮，就會直接讀取檔案，不會作記憶體配置動作，
+	  最節省記憶體，在此模式下，會對同一字根超過 50 字的資料做
+	  Cache 動作，每一筆 cache 佔用 8 + 1 + 字根長度 bytes，這會加速
+	  資料讀取，減少磁碟 I/O，一般而言，絕大多數的表格式輸入法不會
+	  發生 Cache 動作，除了像是注音輸入法這類屬於「音」的輸入。
+
+	* src/modules/gen-inp-v1/gen-inp-v1.c :
+	  判斷檔案壓縮格式使用了 zlib 1.2.2.3 才有的 gzdirect()，造成較低
+	  版本錯誤，改用判斷版本方式解決，舊版的 zlib 就使用 fopen 來判斷。
+
+2006-6-28  Firefly <firefly@opendesktop.org.tw>
+	* src/modules/gen-inp-v1/gen-inp-v1.c
+	  src/modules/gen-inp-v1/gen-inp-v1.h :
+	  1.新的表格式輸入法接近完工，可用字根按鍵碼擴大到所有 Ascii，
+	  並且表格中可以有詞，每個字根最大為 255 Bytes，字詞長度(UCS4)最
+	  大也可以達到 255 個字(1020 Bytes)。
+
+	  2.如果採用記憶體模式 0 或 1 時，當同一字根的重複字超過 20 個，
+	  就會加入 cache 記憶體，每一筆 cache 紀錄，佔用 8 bytes + 字根長度 +1。
+
+2006-6-27  Firefly <firefly@opendesktop.org.tw>
+	* src/modules/gen-inp-v1/gen-inp-v1.c
+	  src/modules/gen-inp-v1/gen-inp-v1.h :
+	  新格式的輸入法加入三種記憶體使用模式：
+	  0:完全使用磁碟 I/O(此為預設)
+	  1:Offset table 放進記憶體(省一半 I/O, 每一筆資料佔用 4 Bytes)
+	  2:全部讀進記憶體(把所有的輸入資料統統放進記憶體)
+
+2006-6-26  Firefly <firefly@opendesktop.org.tw>
+	* src/lib/oxim_module.c :
+	  加入檢查輸入參考檔版本程式碼。
+
+2006-6-23  Firefly <firefly@opendesktop.org.tw>
+	* src/include/gencin.h src/util/oxim-conv/gencin.c :
+	  新的 table 格式完成。
+
+2006-6-19  Firefly <firefly@opendesktop.org.tw>
+	* Makefile.am configure.ac src/include/gencin.h
+	  src/include/module.h src/util/oxim-conv/gencin.c
+	  src/util/oxim-conv/oxim-conv.c src/util/oxim-conv/oxim-conv.h :
+	  啟動新的 table 轉換程式 oxim-conv (原先的 table 最多只能有 47 keys
+	  不足以容納比較 GGYY 的輸入法表格，而且能夠紀錄的資訊也不多，若要硬作
+	  進去，恐怕原來格式會變得很畸型，只好重新設計新一代的 table 格式)。
+
+	* src/util/oxim-conv/Makefile.am :
+	  Add New.
+
+2006-6-15  Firefly <firefly@opendesktop.org.tw>
+	* src/include/oximtool.h src/lib/Makefile.am
+	  src/lib/oxim_addslashes.c :
+	  新增 char *oxim_addslashes(char *str) 函數。
+
+2006-6-14  Firefly <firefly@opendesktop.org.tw>
+	* src/lib/oxim_keymap.c :
+	  做好擴大按鍵碼的準備。
+
+	* src/util/oximconvtab/gencin.c
+	  src/util/oximconvtab/oximconvtab.c
+	  src/util/oximconvtab/oximconvtab.h:
+	  新的轉檔工具可以轉 gcin 與 SCIM 的參考檔了，並新增一個 -c <filename>
+	  參數，可以轉存為標準的 cin 檔案。
+
+	* Makefile.am configure.ac src/util/oxim2tab/gencin.c
+	  src/util/oxim2tab/oxim2tab.c src/util/oxim2tab/oxim2tab.h :
+	  將原來的 oximconvtab 移至 oxim2tab，並刪除 oximconvtab。
+
+	* oxim.spec.in :
+	  增加 oxim2cin 的包裝資料。
+
+	* src/util/oxim2tab/Makefile.am src/util/oxim2tab/oxim2tab.c
+	  src/util/oxim2tab/oxim2tab.h :
+	  增加 oxim2cin 的指令(用 link 方式)。
+
+2006-6-12  Firefly <firefly@opendesktop.org.tw>
+	* src/modules/gen-inp/gen-inp.c :
+	  所有對照表格式的輸入法，都可以含詞，也可以輸入詞，新舊 tab 檔案，
+	  都可相容，嘿嘿 :-P
+
+	* src/util/oximconvtab/gencin.c :
+	  完成大部分 SCIM Txt.in 表格讀取相容準備(只剩輸入法名稱，好像啦 :-)。
+
+	* src/util/oximconvtab/gencin.c :
+	  解決 SCIM Txt.in 檔沒有 BEGIN_CHAR_PROMPTS_DEFINITION
+	  (%keyname begin) 的問題。
+
+2006-6-11  Firefly <firefly@opendesktop.org.tw>
+	* src/include/module.h src/include/oximtool.h
+	  src/modules/bimsphone/bimsphone.c
+	  src/modules/bimsphone/bimsphone.h
+	  src/modules/chewing/chewing.c src/modules/gen-inp/gen-inp.c
+	  src/modules/gen-inp/gen-inp.h :
+	  變更 inpinfo_t 中的 mcch_grouping 從 unsigned char 改為
+	  unsigned int.
+
+2006-6-10  Firefly <firefly@opendesktop.org.tw>
+	* src/gtk-immodule/gtkimcontextoxim.c :
+	  修改 GTK IM Module 不論在何種 Locale 之下，一律只用 UTF-8 編碼。
+
+2006-6-9   Firefly <firefly@opendesktop.org.tw>
+	* src/modules/bimsphone/bimsphone.c
+	  src/modules/bimsphone/bimsphone.h
+	  src/modules/chewing/chewing.c src/modules/gen-inp/gen-inp.c
+	  src/modules/gen-inp/gen-inp.h :
+	  變更 inpinfo_t 中的 mcch_grouping 從 unsigned char 改為
+	  unsigned short.
+
+2006-6-8   Firefly <firefly@opendesktop.org.tw>
+	* src/util/oximconvtab/Makefile.am src/util/oximconvtab/gencin.c
+	  src/util/oximconvtab/oximconvtab.c
+	  src/util/oximconvtab/oximconvtab.h :
+	  新增新的表格轉換程式，準備用來取代 oxim2tab，新的轉換程式除了讀取標準
+	  的 .cin 檔外，也可以讀取 gcin 的 cin 檔以及 scim 的 txt.in 檔案，並且
+	  增加詞的轉換。
+
+2006-6-6   Firefly <firefly@opendesktop.org.tw>
+	* src/gtk-immodule/gtkimcontextoxim.c src/include/IC.h
+	  src/qt-immodule/oxim.pro
+	  src/qt-immodule/qoximinputcontext_x11.cpp
+	  src/xim/gui_preedit.c src/xim/gui_status.c src/xim/gui_xcin.c
+	  src/xim/xim_IC.c :
+	  On The Spot 風格全部改用 X Client Message 來傳送游標位置。
+
+	* src/qt-immodule/oxim.pro :
+	  移除。
+
+	* src/qt-immodule/Makefile.am
+	  src/qt-immodule/moc_qoximinputcontext.cpp
+	  src/qt-immodule/moc_qoximinputcontextplugin.cpp :
+	  新加入檔案。
+
+	* Makefile.am configure.ac :
+	  增加編譯 QT IM MODULE 模組設定。
+
+	* oxim.spec.in :
+	  增加包裝 oxim-qt-immodule 的項目。
+
+	* src/qt-immodule/qoximinputcontext.h
+	  src/qt-immodule/qoximinputcontext_x11.cpp :
+	  修改 QT IM Module 不論在何種 Locale 之下，一律只用 UTF-8 編碼。
+
+2006-6-5   Firefly <firefly@opendesktop.org.tw>
+	* src/lib/oxim_module.c :
+	  移除不用的 im_idx.
+
+	* src/include/oximtool.h src/lib/oxim_module.c :
+	  新增 iminfo_t 結構，以及 oxim_get_IM(int idx)。
+
+	* src/util/oxim-setup/installim.ui.h
+	  src/util/oxim-setup/main.cpp
+	  src/util/oxim-setup/oxim-setup.pro
+	  src/util/oxim-setup/oxim-setup.ui
+	  src/util/oxim-setup/oxim-setup.ui.h :
+	  新增常用片語編輯。
+
+2006-6-2   Firefly <firefly@opendesktop.org.tw>
+	* tables/tables/default.phr :
+	  片語表只保留 Alt+Shift 即可，其餘複雜且無用。
+
+	* src/lib/oxim_qphrase.c :
+	  修改片語相關程式碼。
+
+2006-6-1   Firefly <firefly@opendesktop.org.tw>
+	* etc/oxim.conf.in :
+	  預設輸入法都加入輪換行列。
+
+	* tables/bims_pinyin.tab :
+	  把詞音用的拼音預先轉成 tab 檔，往後不再轉了，
+	  因為不會再變動，也不再繼續維護。
+
+	* tables/Makefile.am :
+	  不要轉換 bims_pinyin.cin。
+
+	* src/util/oxim2tab/bimscin.c src/util/oxim2tab/bimscin.h :
+	  移除 bims_pinyin.cin 的轉檔程式。
+
+	* src/util/oxim2tab/Makefile.am src/util/oxim2tab/gencin.c
+	  src/util/oxim2tab/oxim2tab.c :
+	  忽略不認識的 tag name。
+
+	* src/util/oxim2tab/gencin.c :
+	  修正同字根排序問題。
+
+	* src/util/oxim-setup/bimsphone.ui
+	  src/util/oxim-setup/bimsphone.ui.h
+	  src/util/oxim-setup/chewing.ui
+	  src/util/oxim-setup/installim.ui
+	  src/util/oxim-setup/installim.ui.h
+	  src/util/oxim-setup/main.cpp
+	  src/util/oxim-setup/oxim-setup.pro
+	  src/util/oxim-setup/oxim-setup.ui
+	  src/util/oxim-setup/oxim-setup.ui.h :
+	  完成與 QT4 相容準備。
+
+2006-5-30  Firefly <firefly@opendesktop.org.tw>
+	* src/util/oxim-setup/installim.ui.h
+	  src/util/oxim-setup/oxim-setup.ui.h :
+	  從網路下載的輸入法表格，暫存在 ~/.oxim 之下。
+
+	* src/util/oxim-setup/installim.ui.h :
+	  用 oxim_key_value_destroy() 釋放配置的記憶體。
+
+2006-5-29  Firefly <firefly@opendesktop.org.tw>
+	* src/util/oxim-setup/installim.ui
+	  src/util/oxim-setup/installim.ui.h
+	  src/util/oxim-setup/oxim-setup.pro
+	  src/util/oxim-setup/oxim-setup.ui
+	  src/util/oxim-setup/oxim-setup.ui.h :
+	  完成從網路下載輸入法並且安裝以及更新 config 檔案的程式碼了 :-))
+
+	* tables/array30.cin tables/cns11643.cin tables/cnsimplex.cin
+	  tables/ez.cin :
+	  移除這些輸入法參考檔，只保留中標倉頡與中標注音，因為其他輸入法
+	  可以從網路安裝。
+
+	* tables/Makefile.am :
+	  編譯檔也要更改才行。
+
+	* oxim.spec.in :
+	  包裝檔也得改改 :-P
+
+	* configure.ac :
+	  版本改為 1.0.93 (測試版)。
+
+2006-5-25  Firefly <firefly@opendesktop.org.tw>
+	* src/util/oxim-setup/installim.ui
+	  src/util/oxim-setup/installim.ui.h
+	  src/util/oxim-setup/oxim-setup.pro
+	  src/util/oxim-setup/oxim-setup.ui
+	  src/util/oxim-setup/oxim-setup.ui.h :
+	  製作網路安裝輸入法列表。
+
+2006-5-24  Firefly <firefly@opendesktop.org.tw>
+	* configure.ac :
+	  加入檢查 QT Library 選項以及 --enable-setup-tool 選項。
+
+	* src/util/oxim-setup/main.cpp :
+	  加入檢查 oxim-setup 是否正在執行的程式碼。(用 Atom 方式)
+
+	* src/include/imodule.h src/lib/oxim_module.c src/xim/fkey.c :
+	  移除 IM_get_numlist(void) 函數與相關程式碼。
+
+	* src/util/oxim-setup/installim.ui
+	  src/util/oxim-setup/installim.ui.h
+	  src/util/oxim-setup/oxim-setup.pro :
+	  完成從 HTTP 讀取輸入法安裝列表的功能。
+
+2006-5-23  Firefly <firefly@opendesktop.org.tw>
+	* src/lib/oxim_config.c :
+	  檢查 oxim.conf 是否合法。
+
+	* src/util/oxim-setup/installim.ui
+	  src/util/oxim-setup/installim.ui.h :
+	  新增輸入法安裝的 Form 與 Code.
+
+	* src/util/oxim-setup/Makefile.am src/util/oxim-setup/chewing.ui
+	  src/util/oxim-setup/installim.ui
+	  src/util/oxim-setup/installim.ui.h
+	  src/util/oxim-setup/main.cpp
+	  src/util/oxim-setup/oxim-setup.pro
+	  src/util/oxim-setup/oxim-setup.ui
+	  src/util/oxim-setup/oxim-setup.ui.h :
+	  完成從本機新增、刪除輸入法功能。
+
+2006-5-22  Firefly <firefly@opendesktop.org.tw>
+	* src/modules/bimsphone/bimsphone.c
+	  src/modules/bimsphone/bimsphone.h :
+	  增加兩個選字鍵選項設定 "qwertyuiop" & "zxcvbnm,./"
+
+	* src/util/oxim-setup/bimsphone.ui
+	  src/util/oxim-setup/oxim-setup.pro
+	  src/util/oxim-setup/oxim-setup.ui.h :
+	  增加兩個選字鍵選項設定 "qwertyuiop" & "zxcvbnm,./"
+
+	* src/util/oxim-setup/chewing.ui :
+	  增加新酷音輸入法屬性 GUI Form.
+
+	* src/modules/chewing/chewing.c :
+	  增加新酷音屬性讀取程式碼。
+
+	* src/include/oximtool.h src/lib/oxim_config.c :
+	  增加 oxim_version() 函式。
+
+	* src/util/oxim-setup/chewing.ui src/util/oxim-setup/gencin.ui
+	  src/util/oxim-setup/oxim-setup.pro
+	  src/util/oxim-setup/oxim-setup.ui
+	  src/util/oxim-setup/oxim-setup.ui.h :
+	  GUI Setup 程式完成。
+
+2006-5-21  Firefly <firefly@opendesktop.org.tw>
+	* src/util/oxim-setup/bimsphone.ui src/util/oxim-setup/gencin.ui
+	  src/util/oxim-setup/gencin.ui.h
+	  src/util/oxim-setup/globolsetting.ui
+	  src/util/oxim-setup/globolsetting.ui.h
+	  src/util/oxim-setup/main.cpp
+	  src/util/oxim-setup/oxim-setup.pro
+	  src/util/oxim-setup/oxim-setup.ui
+	  src/util/oxim-setup/oxim-setup.ui.h
+	  src/util/oxim-setup/bimsphone.ui.h :
+	  重新修正 #include 引入方式，完成詞音屬性程式碼。
+
+	* src/modules/bimsphone/bimsphone.c :
+	  修正讀取 settings 的鍵盤對應選項程式碼。
+
+2006-5-19  Firefly <firefly@opendesktop.org.tw>
+	* src/include/IC.h :
+	  新增 void imc_reset(void) 函數。
+
+	* src/include/oximtool.h :
+	  新增 OXIM_ATOM 與 cmd_id 定義，讓 client 呼叫 status win 做事。
+
+	* src/xim/gui.c :
+	  加入呼叫 imc_reset() 程式碼。
+
+	* src/xim/gui_status.c :
+	  加入處理 Client Message 程式碼。
+
+	* src/xim/xim_IC.c :
+	  新增 void imc_reset(void) 程式碼。
+
+	* src/include/oximtool.h src/lib/oxim_module.c src/xim/xim.c :
+	  新增 int oxim_IMisCircular(int idx)，用來查詢某個輸入法是否
+	  可以用 Ctrl+Shitf 輪換。
+
+	* src/util/oxim-setup/images/cd01.png :
+	  新增打勾圖示。
+
+	* src/util/oxim-setup/oxim-setup.pro
+	  src/util/oxim-setup/oxim-setup.ui
+	  src/util/oxim-setup/oxim-setup.ui.h :
+	  1、完成字型與 Size 設定程式碼。
+	  2、按確定按鈕後以 Client Message Event 呼叫 OXIM reload。
+
+	* src/util/oxim-setup/bimsphone.ui :
+	  新增詞音輸入法的 GUI 屬性設定。
+
+2006-5-18  Firefly <firefly@opendesktop.org.tw>
+	* configure.ac :
+	  讓 configure 能自動判斷新酷音與詞音的相依行，以及輸出詳細的
+	  configure 結果。
+	  (Thanks Jim Huang <jserv.tw@gmail.com>)
+
+	* src/util/oxim-setup/main.cpp src/util/oxim-setup/oxim-setup.pro
+	  src/util/oxim-setup/oxim-setup.ui 
+	  src/util/oxim-setup/oxim-setup.ui.h
+	  src/util/oxim-setup/Makefile.am
+	  Makefile.am configure.ac :
+	  加入編譯 oxim-setup 的 Makefile.am
+
+	* src/include/oximtool.h src/lib/oxim_module.c
+	  src/util/oxim-setup/gencin.ui
+	  src/util/oxim-setup/oxim-setup.pro
+	  src/util/oxim-setup/oxim-setup.ui
+	  src/util/oxim-setup/oxim-setup.ui.h src/xim/gui_menu.c :
+	  新增 gen-inp 輸入法設定 GUI 介面與程式碼。
+
+2006-5-17  Firefly <firefly@opendesktop.org.tw>
+	* src/include/oximtool.h src/lib/oxim_module.c :
+	  增加三個新函數：
+		int oxim_set_IMKey(int idx, int key);
+		int oxim_set_IMAliasName(int idx, const char *alias);
+		int oxim_set_IMCircular(int idx, int OnOff);
+
+2006-5-16  Firefly <firefly@opendesktop.org.tw>
+	* etc/oximrc.conf.in :
+	  加入 Circular 設定項目。
+
+	* src/include/module.h src/lib/oxim_module.c src/xim/gui_menu.c
+	  src/xim/gui_status.c src/xim/gui_xcin.c src/xim/xim.c :
+	  增加處理 AliasName 與 Circular 項目的程式碼。
+
+	* src/include/imodule.h src/include/oximtool.h
+	  src/lib/oxim_config.c src/lib/oxim_module.c src/lib/oximint.h
+	  src/xim/xim.c :
+	  因應 GUI Setup 程式，新增、移除一些跟輸入法相關的程式碼。
+
+	* src/util/oxim-setup/main.cpp src/util/oxim-setup/oxim-setup.pro
+	  src/util/oxim-setup/oxim-setup.ui
+	  src/util/oxim-setup/oxim-setup.ui.h :
+	  GUI Setup 程式碼更新(已完成變更預設輸入法部分)。
+
+2006-5-15  Firefly <firefly@opendesktop.org.tw>
+	* src/include/module.h src/util/oxim2tab/gencin.c :
+	  移除 charcode_t 及 ccode_info_t 結構。
+
+	* src/util/oxim-setup/main.cpp
+	  src/util/oxim-setup/oxim-setup.pro
+	  src/util/oxim-setup/oxim-setup.ui
+	  src/util/oxim-setup/oxim-setup.ui.h :
+	  新增 QT Base GUI Setup 程式。
+
+2006-5-12  Firefly <firefly@opendesktop.org.tw>
+	* src/modules/gen-inp/gen-inp.c src/modules/chewing/chewing.c :
+	  因應 Reload 設定，輸入法模組的 terminate 必須實做出來。
+
+	* src/xim/gui_symbol.c :
+	  sym_data 沒有初始為 NULL，Reload 時容易掛掉。
+
+	* src/xim/gui.c src/xim/gui_keyboard.c src/xim/gui_menu.c
+	  src/xim/gui_preedit.c src/xim/gui_status.c
+	  src/xim/gui_symbol.c src/xim/gui_tray.c src/xim/gui_xcin.c :
+	  設定重新讀取並 Reinitialize OXIM 程式碼 Final 了。
+
+	  不需要 kill OXIM 或是 logout 後重新執行，只要呼叫 oxim_reload(void)，
+	  即可，目前先把 Reload 作成選項放在快速選單中，等 GUI Setup 程式完成，
+	  會利用 X Client Message Event 功能呼叫 Status Window 執行
+	  oxim_reload(void)，只是...GUI Setup 要用 QT or GTK2 來寫？
+
+	* src/modules/gen-inp/gen-inp.c :
+	  取消查詢字根函數。
+
+2006-5-11  Firefly <firefly@opendesktop.org.tw>
+	* configure.ac :
+	  移除檢查 pow 及 sqrt 項目。
+
+	* src/lib/Makefile.am :
+	  已經移除了 siod 相依，所以不需要再 link libm。
+
+	* src/lib/perr.c src/lib/set_locale.c :
+	  移除。
+
+	* src/lib/oxim_perr.c src/lib/oxim_set_locale.c :
+	  新增。
+
+	* src/include/gui.h src/include/oximtool.h src/lib/Makefile.am
+	  src/lib/oxim_malloc.c src/lib/oxim_module.c
+	  src/lib/oxim_open_file.c src/lib/oxim_qphrase.c
+	  src/lib/oxim_settings.c src/util/oxim2tab/bimscin.c
+	  src/util/oxim2tab/gencin.c src/util/oxim2tab/oxim2tab.c
+	  src/xim/fkey.c src/xim/gui.c src/xim/gui_keyboard.c
+	  src/xim/gui_menu.c src/xim/gui_preedit.c src/xim/gui_status.c
+	  src/xim/gui_symbol.c src/xim/gui_tray.c src/xim/gui_xcin.c
+	  src/xim/oxim_main.c src/xim/xim.c src/xim/xim_IC.c :
+	  程式碼最佳化、移除不必要的贅碼。
+
+	* etc/oxim.conf.in :
+	  移除舊的設定檔。
+
+	* configure.ac etc/Makefile.am etc/oximrc.conf.in :
+	  改用新的設定檔名。
+
+	* src/xim/gui.c src/xim/gui_menu.c src/xim/xim.c :
+	  加入實驗性質的重載程式碼，如此可在不必 kill/logout OXIM 的情況下
+	  重新讀取設定資料，也可完整保留 IC 值，這是為了讓將來的 GUI Setup
+	  程式使用。
+
+	* src/modules/bimsphone/bimsphone.c
+	  src/modules/bimsphone/bimspinyin.c :
+	  修正 unload 再 reload 時會掛掉的問題。
+
+	* src/include/oximtool.h src/lib/oxim_config.c :
+	  加入 void oxim_Reload(void) 函數。
+
+	* src/lib/oxim_perr.c src/modules/gen-inp/gen-inp.c :
+	  將 perr() 全部改成 oxim_perr()。
+
+2006-5-10  Firefly <firefly@opendesktop.org.tw>
+	* src/lib/oxim_get_line.c :
+	  修正當忽略的字元在 "" 之中時，仍然當作有效字元處理。
+
+	* src/include/module.h
+	  src/modules/bimsphone/bimsphone.c src/modules/bimsphone/bimsphone.h
+	  src/modules/chewing/chewing.c src/modules/gen-inp/gen-inp.c
+	  src/modules/gen-inp/gen-inp.h src/modules/unicode/unicode.c
+	  src/modules/unicode/unicode.h src/xim/gui_status.c
+	  src/xim/gui_xcin.c :
+	  取消由輸入法模組指定中、英輸入法名稱，統一由系統模組程式處理，
+	  讓輸入法模組的工作單純化。
+
+	* configure.ac etc/oxim.conf.in src/include/oximtool.h
+	  src/lib/Makefile.am src/lib/oxim_config.c
+	  src/lib/oxim_module.c src/lib/oxim_settings.c
+	  src/lib/oximint.h src/modules/bimsphone/bimsphone.c
+	  src/modules/chewing/chewing.c src/modules/gen-inp/gen-inp.c
+	  src/modules/gen-inp/gen-inp.h :
+	  移除 siod 函式庫依賴。
+
+	* src/lib/oxim_rc.c src/lib/set_data.c src/lib/siod/Makefile.am
+	  src/lib/siod/example.c src/lib/siod/siod.README.txt
+	  src/lib/siod/siod.h src/lib/siod/siod.html
+	  src/lib/siod/siodp.h src/lib/siod/slib.c src/lib/siod/sliba.c
+	  src/lib/siod/slibu.c :
+	  移除 siod 函式庫。
+
+2006-5-9  Firefly <firefly@opendesktop.org.tw>
+	* src/lib/get_line.c src/lib/get_word.c src/lib/open_file.c :
+	  移除。
+
+	* src/include/oximtool.h src/lib/Makefile.am
+	  src/lib/oxim_qphrase.c src/lib/oxim_rc.c
+	  src/lib/oxim_settings.c src/lib/oximint.h
+	  src/util/oxim2tab/oxim2tab.c src/util/oxim2tab/oxim2tab.h
+	  src/xim/Makefile.am src/xim/fkey.c src/xim/gui.c
+	  src/xim/gui_keyboard.c src/xim/gui_symbol.c src/xim/xim.c :
+	  新增公用函數以及修正相關程式碼。
+
+	* src/include/oximtool.h src/lib/oxim_config.c
+	  src/lib/oxim_settings.c src/lib/oximint.h src/xim/gui.c :
+	  系統設定統一由 oxim_config.c 及 oxim_settings.c 管理。
+
+	* src/lib/oxim_get_line.c src/lib/oxim_get_word.c
+	  rc/lib/oxim_open_file.c :
+	  新增程式。
+
+	* src/xim/xim.c :
+	  修正配置語系列表記憶體時，沒有清空內容，容易引 malloc() 錯誤。
+
+	* src/include/gui.h src/include/oximtool.h
+	  src/lib/oxim_config.c src/lib/oxim_get_line.c src/xim/gui.c
+	  src/xim/gui_menu.c src/xim/gui_preedit.c src/xim/gui_status.c
+	  src/xim/gui_symbol.c src/xim/gui_xcin.c :
+	  逐漸移除對 siod 函式依賴，自己寫簡單的設定檔 parser，不需要
+	  複雜的 siod，可以省下約 100k 左右的程式執行空間。
+
+2006-5-8  Firefly <firefly@opendesktop.org.tw>
+	* src/xim/gui_preedit.c :
+	  修正以空白鍵當選擇鍵的字元寬度計算錯誤問題。
+
+	* src/include/module.h src/include/oximtool.h
+	  src/lib/Makefile.am src/lib/oxim_config.c
+	  src/lib/oxim_module.c src/lib/oxim_settings.c :
+	  新增系統與輸入法設定相關公用程式碼。
+
+2006-5-5  Firefly <firefly@opendesktop.org.tw>
+	* etc/locale.list :
+	  Locale 列表反向排列，否則 IM Client 會指定第一個相符的
+	  locale name 而不管 encoding。
+
+	* src/include/IC.h src/include/imodule.h src/include/module.h
+	  src/include/oxim.h src/lib/oxim_config.c src/lib/oxim_module.c
+	  src/lib/oximint.h src/xim/fkey.c src/xim/gui.c
+	  src/xim/gui_menu.c src/xim/oxim_main.c src/xim/xim.c
+	  src/xim/xim_IC.c :
+	  繼續去蕪存菁，並且把可共用程式碼盡量改寫至 lib 中，
+	  未來打算把 xim server 獨立成單一程式，IM、IC、GUI 介面，
+	  整合到 lib 裡面，如此就可發展出另外的輸入法程式，
+	  如 gtk-im-module、qt-im-module...，不必再依靠 xim server。
+
+	* etc/oxim.conf.in :
+	  移除 INPUT_STYLE 設定屬性。
+
+2006-5-04  Firefly <firefly@opendesktop.org.tw>
+	* src/lib/oxim_snprintf.c :
+	  移除該程式。
+
+	* src/lib/check_file.c :
+	  移除。
+
+	* src/lib/oxim_check_file.c :
+	  新增。
+
+	* src/include/imodule.h src/include/module.h src/include/oxim.h
+	  src/include/oximtool.h src/lib/Makefile.am
+	  src/lib/oxim_config.c src/lib/oxim_module.c src/lib/oxim_rc.c
+	  src/lib/oximint.h src/lib/im_comm/ascii_wb.c
+	  src/lib/im_comm/qphrase.c src/modules/bimsphone/bimsphone.c
+	  src/modules/chewing/chewing.c src/modules/gen-inp/gen-inp.c
+	  src/modules/unicode/unicode.c src/util/oxim2tab/oxim2tab.c
+	  src/util/oxim2tab/oxim2tab.h src/xim/gui.c
+	  src/xim/gui_keyboard.c src/xim/gui_menu.c
+	  src/xim/gui_preedit.c src/xim/gui_status.c
+	  src/xim/gui_symbol.c src/xim/gui_xcin.c src/xim/oxim_main.c
+	  src/xim/xim.c configure.ac :
+	  移除、整併、修改一些雜亂無章的程式碼與資料結構。
+
+2006-5-03  Firefly <firefly@opendesktop.org.tw>
+	* src/xim/gui.c :
+	  最佳化字型處理速度與節省記憶體空間。
+
+	* src/include/gui.h src/include/oximtool.h
+	  src/util/oxim2tab/gencin.c src/util/oxim2tab/oxim2tab.c
+	  src/xim/oxim_main.c src/xim/xim.c tables/Makefile.am :
+	  移除、整併、修改一些雜亂無章的程式碼與資料結構。
+
+	* src/lib/oximint.h src/lib/oxim_config.c :
+	  增加系統配置功能。
+
+2006-5-02  Firefly <firefly@opendesktop.org.tw>
+	* src/xim/oxim_main.c src/lib/oxim_rc.c :
+	  不再讓 User 可指定 oxim.conf 所在的路徑以及名稱，以免造成混淆。
+
+	* src/include/gui.h src/xim/gui.c src/xim/gui_menu.c
+	  src/xim/gui_preedit.c src/xim/gui_status.c src/xim/gui_symbol.c :
+	  修改字型配置方式。
+
+2006-4-28  Firefly <firefly@opendesktop.org.tw>
+	* src/xim/gui_keyboard.c src/xim/gui_menu.c
+	  src/xim/gui_preedit.c src/xim/gui_status.c
+	  src/xim/gui_symbol.c src/xim/gui_tray.c src/xim/gui_xcin.c :
+	  取消 GraphicsExpose Event 處理程式碼。
+
+2006-4-27  Firefly <firefly@opendesktop.org.tw>
+	* src/xim/gui.c :
+	  利用 alarm() 在 OXIM 啟動 5 分鐘之內偵測 Tray Manager。
+
+	* src/xim/gui_status.c :
+	  修正在中文輸入時，狀態視窗重繪閃動情形。
+
+2006-4-26  Firefly <firefly@opendesktop.org.tw>
+	* src/xim/gui.c :
+	  在 ~/.oxim/ 下建立 windows.position，用來紀錄各視窗最後座標，
+	  紀錄的時機為：用滑鼠移動座標並釋放左鍵按鈕後；
+	  取回時機為：OXIM 啟動時。
+
+	* etc/oxim.conf.in :
+	  移除 SINMD_IN_LINE1、BEEP_WRONG、BEEP_DUPCHAR 設定。
+
+	* src/xim/images/preedit_side.xpm src/xim/images/preedit_side_r.xpm :
+	  刪掉不要了。
+
+	* src/include/IC.h src/include/gui.h
+	  src/include/module.h src/include/oxim.h
+	  src/modules/bimsphone/bimspinyin.c
+	  src/modules/chewing/chewing.c src/modules/gen-inp/gen-inp.c
+	  src/modules/gen-inp/gen-inp.h src/modules/unicode/unicode.c
+	  src/modules/unicode/unicode.h src/xim/gui.c
+	  src/xim/gui_preedit.c src/xim/gui_xcin.c src/xim/oxim_main.c
+	  src/xim/xim.c src/xim/xim_IC.c :
+	  移除一堆無用的資料結構與相關的程式碼。
+
+2006-4-25  Firefly <firefly@opendesktop.org.tw>
+	* configure.ac :
+	  版本號碼改為 1.0.3，並釋出。
+
+	* etc/oxim.conf.in src/include/module.h src/include/oxim.h
+	  src/lib/im_comm/qphrase.c :
+	  將 default.phr 與 DEFAULT_IM_SINMD 從 oxim.conf 移除，
+	  並修改相關程式碼。
+
+	* src/xim/gui_preedit.c src/xim/gui_xcin.c src/xim/xim.c :
+	  修正在 Big5 編碼環境時，「裏、碁....」等字無法以
+	  Xutf8TextListToTextProperty() 轉換，必須借助 iconv() 配合
+	  XmbTextListToTextProperty() 才能正確轉換。
+
+	* src/xim/oxim_main.c :
+	  移除不用的程式碼。
+
+	* src/xim/gui_preedit.c src/xim/gui_xcin.c :
+	  OXIM / XCIN 輸入風格共用 OnTheSpot 程式碼。
+
+2006-4-24  Firefly <firefly@opendesktop.org.tw>
+	* src/xim/gui_menu.c :
+	  修正沒有 Input Context 時，按 Tray icon 當掉問題。
+
+	* src/lib/oxim_rc.c :
+	  去掉讀取 ~/.oxim.conf 的程式碼。
+
+2006-4-23  Firefly <firefly@opendesktop.org.tw>
+	* src/modules/chewing/chewing.c :
+	  修正新酷音字詞設定問題。
+
+2006-4-22  Firefly <firefly@opendesktop.org.tw>
+	* etc/oxim.conf.in :
+	  修正錯字 (defint SELECT_FONT_SIZE 16)
+	   => (define SELECT_FONT_SIZE 16)
+
+2006-4-21  Firefly <firefly@opendesktop.org.tw>
+	* tables/symbol.list :
+	  加入八卦符號項目。
+
+	* src/include/oxim.h src/xim/oxim_main.c :
+	  移除讀取預設字型程式碼。
+
+	* src/xim/gui.c :
+	  加入讀取預設字型程式碼。
+
+	* src/xim/gui_xcin.c :
+	  移除不再使用的程式碼。
+
+	* configure.ac :
+	  版本設為 1.0.2.
+
+2006-4-20  Firefly <firefly@opendesktop.org.tw>
+	* src/xim/gui_xcin.c :
+	  新增 XCIN 輸入法風格主程式(Final)。
+
+	* src/include/fkey.h src/include/gui.h src/xim/Makefile.am
+	  src/xim/fkey.c src/xim/gui.c src/xim/gui_menu.c
+	  src/xim/gui_preedit.c src/xim/xim.c :
+	  修改相關程式與設定，以便配合 XCIN 輸入風格。
+
+2006-4-19  Firefly <firefly@opendesktop.org.tw>
+	* src/include/gui.h src/xim/gui.c :
+	  增加新函數
+	  1.gui_get_input_focus(void) 取得輸入焦點視窗。
+	  2.gui_get_led_state(KeySym keysym) 取得 LED 狀態。
+	  內建預設顏色表與 XCIN 輸入風格設定。
+
+	* etc/oxim.conf.in src/xim/oxim_main.c :
+	  移除讀取 XKILL_DISABLE、ICCHECK_DISABLE、SINGLE_IM_CONTEXT、
+	  IM_FOCUS_ON、KEEP_POSITION_ON、DIFF_BEEP、KEYBOARD_TRANSLATE
+	  程式碼與系統設定。
+
+	* src/xim/gui_keyboard.c src/xim/gui_menu.c src/xim/xim_IC.c
+	  src/xim/gui_preedit.c src/xim/gui_status.c src/xim/xim.c :
+	  more fix.
+
+2006-4-18  Firefly <firefly@opendesktop.org.tw>
+	* src/modules/bimsphone/bimsphone.c
+	  src/modules/chewing/chewing.c :
+	  加入字根表(給螢幕小鍵盤用)。
+
+	* src/xim/Makefile.am :
+	  增加 -lXtst，讓程式可以用 XTestFakeKeyEvent 控制鍵盤 LED 狀態。
+
+	* src/include/gui.h src/xim/gui_keyboard.c :
+	  螢幕小鍵盤程式 Final。
+
+	* src/include/IC.h src/xim/gui_menu.c
+	  src/xim/gui_symbol.c src/xim/xim.c :
+	  增加選單功能選項(简体输出、繁體輸出、英數模式)。
+
+2006-4-17  Firefly <firefly@opendesktop.org.tw>
+	* src/xim/gui.c :
+	  增加可變動字型大小功能。
+
+	* etc/oxim.conf.in src/xim/gui_menu.c src/xim/gui_symbol.c :
+	  增加設定 menu 以及符號字型大小的設定。
+
+	* src/modules/unicode/unicode.c :
+	  加入字根表(給螢幕小鍵盤用)。
+
+	* src/include/gui.h src/include/imodule.h
+	  src/include/oximtool.h src/lib/oxim_module.c
+	  src/xim/gui_keyboard.c src/xim/xim.c:
+	  Bug fix.
+
+2006-4-16  Firefly <firefly@opendesktop.org.tw>
+	* src/include/fkey.h src/include/gui.h
+	  src/include/module.h src/modules/gen-inp/gen-inp.c
+	  src/xim/fkey.c src/xim/gui_keyboard.c src/xim/xim.c :
+	  增加螢幕小鍵盤顯示輸入法字根相關程式碼。
+
+2006-4-14  Firefly <firefly@opendesktop.org.tw>
+	* panels/defaultkeyboard.conf panels/defaultkeyboard.xpm
+	  src/include/fkey.h src/xim/fkey.c src/xim/gui.c
+	  src/xim/gui_keyboard.c src/xim/gui_symbol.c src/xim/xim.c :
+	  完成螢幕小鍵盤英數狀態輸入。
+
+	* src/xim/IMdkit/i18nPtHdr.c :
+	  修正 IMdkit 無法 Forward 由螢幕小鍵盤產生 KeyPress Event 的問題。
+
+2006-4-13  Firefly <firefly@opendesktop.org.tw>
+	* panels/Makefile.am panels/defaultkeyboard.conf
+	  panels/defaultkeyboard.xpm :
+	  新增面板設定檔案。
+
+	* src/xim/images/keyboard.xpm :
+	  移除鍵盤圖片，改至 panels 目錄讀取。
+
+	* Makefile.am configure.ac oxim.spec.in src/lib/check_file.c
+	  src/xim/gui_keyboard.c :
+	  因增加面板設定，修改相關檔案。
+
+2006-4-12  Firefly <firefly@opendesktop.org.tw>
+	* src/xim/gui_keyboard.c src/xim/images/keyboard.xpm :
+	  新增螢幕輸入小鍵盤程式與圖片。
+
+	* src/include/gui.h src/xim/Makefile.am src/xim/gui.c
+	  src/xim/gui_menu.c src/xim/gui_symbol.c :
+	  因應螢幕小鍵盤功能，修改相關程式。
+
+	* oxim.spec.in :
+	  包裝套件檔案增加 symbol.list。
+
+2006-4-11  Firefly <firefly@opendesktop.org.tw>
+	* tables/symbol.list tables/Makefile.am :
+	  新增各類特殊符號表(tables/symbol.list)，並修改編譯設定。
+
+	* src/xim/gui_symbol.c :
+	  符號輸入小視窗程式 Final。
+
+	* src/xim/xim.c :
+	  修正按鍵觸發時，引發符號輸入視窗出現問題。
+
+2006-4-10  Firefly <firefly@opendesktop.org.tw>
+	* src/xim/gui.c :
+	  修改 gui_Draw_Line() 可選擇畫實線或虛線。
+
+	* src/xim/images/close.xpm :
+	  新增視窗關閉按鈕圖示。
+
+	* src/xim/gui_symbol.c :
+	  完成符號表輸入程式、視窗拖曳以及關閉。
+
+2006-4-09  Firefly <firefly@opendesktop.org.tw>
+	* src/include/gui.h src/xim/gui.c :
+	  新增繪直線函數 gui_Draw_Line()
+
+	* src/xim/gui_status.c :
+	  修正沒有檢查滑鼠左鍵的 bug
+
+	* src/xim/gui_menu.c :
+	  增加呼叫符號輸入視窗的程式碼。
+
+	* src/xim/gui_symbol.c :
+	  完成符號輸入視窗位置與內容繪製。
+
+2006-4-07  Firefly <firefly@opendesktop.org.tw>
+	* etc/oxim.conf.in :
+	  修正多一個 ')' 號的問題。
+
+	* src/include/gui.h src/xim/gui.c :
+	  新增一個公用函數 gui_send_key() 用來對特定視窗送模擬按鍵。
+
+	* src/lib/oxim_module.c src/include/imodule.h :
+	  新增查詢輸入法函數 OXIM_GetIMByIndex()。
+
+	* src/xim/gui_menu.c :
+	  Icon Tray Menu 選擇輸入法完成。
+
+	* src/include/fkey.h src/include/gui.h src/xim/fkey.c
+	  src/xim/gui_menu.c src/xim/gui_symbol.c src/xim/xim.c :
+	  加入符號輸入視窗相關程式碼與函數。
+
+2006-4-06  Firefly <firefly@opendesktop.org.tw>
+	* src/lib/oxim_module.c src/lib/s2t.c src/lib/ucs4toutf8.c
+	  src/lib/utf8toucs4.c src/lib/im_comm/charcode.c src/xim/gui.c
+	  src/xim/gui_preedit.c src/xim/gui_status.c src/xim/gui_tray.c
+	  src/xim/oxim_main.c :
+	  在程式開頭補上 Licence 宣告。
+
+	* etc/oxim.conf.in src/lib/oxim_module.c src/xim/oxim_main.c :
+	  自動搜尋輸入法模組以及表格檔，移除 oxim.conf CINPUT 與 MODULE 設定。
+
+	* src/include/imodule.h src/lib/oxim_module.c src/xim/fkey.c
+	  src/xim/gui.c src/xim/oxim_main.c src/xim/xim.c :
+	  自動搜尋輸入法模組以及表格檔程式完成。
+
+	* etc/oxim.conf.in src/include/imodule.h src/lib/oxim_module.c
+	  src/modules/bimsphone/bimsphone.c
+	  src/modules/chewing/chewing.c src/modules/gen-inp/gen-inp.c
+	  src/modules/unicode/unicode.c src/xim/oxim_main.c :
+	  1.取消 INP_CNAME 設定，往後改用 ALIAS_NAME。
+	  2.載入輸入法模組及檔案時，順便紀錄顯示用的輸入法名稱，
+	    以便 gui 選單以及設定程式使用。
+
+2006-4-04  Firefly <firefly@opendesktop.org.tw>
+	* src/util/oxim2tab/gencin.h src/include/gencin.h
+	  src/util/oxim2tab/Makefile.am :
+	  gencin.h 移至 src/include/ 並修改編譯檔。
+
+	* src/include/imodule.h src/lib/Makefile.am
+	  src/lib/oxim_module.c src/modules/gen-inp/gen-inp.c
+	  src/modules/gen-inp/gen-inp.h src/xim/oxim_main.c :
+	  輸入法設定，改為程式啟動時自動讀取，不要再讀設定檔。
+
+2006-4-03  Firefly <firefly@opendesktop.org.tw>
+	* etc/oxim.conf.in src/include/oxim.h src/xim/oxim_main.c :
+	  移除 DEFAULT_IM_MODULE 設定以及相關程式碼。
+
+	* src/xim/gui_symbol.c :
+	  新增符號輸入小視窗主程式。
+
+	* src/include/gui.h src/xim/Makefile.am src/xim/gui.c :
+	  因應符號輸入視窗，需要修改相關程式與編譯設定。
+
+	* src/xim/gui_menu.c src/xim/gui_preedit.c :
+	  Event 處理部份更新。
+
+2006-4-02  Firefly <firefly@opendesktop.org.tw>
+	* src/xim/images/sideback_l.xpm :
+	  變更圖示。
+
+	* src/include/gui.h src/xim/gui.c src/xim/gui_menu.c
+	  src/xim/gui_preedit.c src/xim/gui_status.c src/xim/gui_tray.c :
+	  實施地方自治，讓各視窗自行控制 Event，不再由中央(gui.c)控管。
+
+2006-3-31  Firefly <firefly@opendesktop.org.tw>
+	* src/include/IC.h src/include/gui.h src/include/oxim.h
+	  src/xim/gui_menu.c src/xim/oxim_main.c src/xim/xim.c
+	  src/xim/xim_IC.c :
+	  1.加入送出字串函數，預備將來的符號輸入小視窗功能。
+	  2.加入功能選單指標移動與按鈕事件相關程式碼。
+
+2006-3-30  Firefly <firefly@opendesktop.org.tw>
+	* etc/oxim.conf.in :
+	  增加功能表選單顏色設定。
+
+	* src/include/gui.h src/xim/gui.c src/xim/gui_menu.c
+	  src/xim/gui_preedit.c :
+	  繼續功能表選單程式設計。
+
+2006-3-29  Firefly <firefly@opendesktop.org.tw>
+	* src/xim/oxim_main.c :
+	  移除 #include <zlib.h>，因為不需要了。
+
+	* src/xim/Makefile.am src/xim/gui.c src/xim/gui_menu.c
+	  src/include/gui.h src/xim/gui_tray.c :
+	  增加功能選單程式碼。
+
+2006-3-27  Firefly <firefly@opendesktop.org.tw>
+	* oxim.spec.in :
+	  1.將 configure 指令改成 rpm 專用的 %configure。
+	  2.gtk-immodule 包裝路徑改為 %{_libdir}，以免在 x86_64 找錯路徑。
+
+	* configure.ac src/modules/bimsphone/Makefile.am
+	  src/modules/chewing/Makefile.am :
+	  加入 libintl、libiconv 編譯選項。
+
+2006-3-24  Firefly <firefly@opendesktop.org.tw>
+	* src/include/imodule.h src/include/module.h
+	  src/lib/oxim_module.c src/modules/bimsphone/bimsphone.c
+	  src/modules/gen-inp/gen-inp.c src/modules/unicode/unicode.c
+	  src/util/oxim2tab/gencin.c src/xim/oxim_main.c :
+	  移除 get_objenc() 函數相關程式碼，因為不需要了。
+
+	* src/lib/check_file.c :
+	  在 ~/.oxim 之下，建立 tables 與 modules 兩個目錄，這樣一般 User
+	  也能放置輸入法對照檔與模組。
+
+	* src/xim/gui.c src/xim/gui_tray.c :
+	  準備讓 tray icon 具有滑鼠事件，後續將增加功能表程式。
+
+2006-3-23  Firefly <firefly@opendesktop.org.tw>
+	* src/xim/gui.c src/xim/gui_tray.c :
+	  修正 Tray 相關程式碼。
+
+2006-3-7  Firefly <firefly@opendesktop.org.tw>
+	* src/lib/s2t.c :
+	  修正 UTF-8 繁簡轉換的對照表結構，把字串指標改為等長字串，
+	  結果 liboxim.so 居然省了將近 100K Bytes？ @_@
+	  看來我對編譯程式的記憶體管理知識顯然不足，加油！！
+
+2006-3-6  Firefly <firefly@opendesktop.org.tw>
+	* src/modules/chewing/chewing.c :
+	  新酷音從 0.2.6 開始支援漢語拼音，這下我不用太累(淚)。
+	  開始著手修改新酷音支援漢語拼音(新酷音版本至少 >= 0.2.6)。
+
+	* src/include/module.h src/modules/bimsphone/bimsphone.c
+	  src/modules/gen-inp/gen-inp.c src/modules/unicode/unicode.c :
+	  移除不再需要的變數。好像還有一堆東西要移除，哇勒！改程式真累 :-P
+
+2006-3-3  Firefly <firefly@opendesktop.org.tw>
+	* src/util/oxim2tab/syscin.c src/util/oxim2tab/syscin.h
+	  tables/sys.cin :
+	  不需要 sys.tab，所以移除相關程式與表格檔。
+
+	* oxim.spec.in src/include/gui.h src/include/module.h
+	  src/lib/im_comm/ascii_wb.c src/lib/im_comm/charcode.c
+	  src/modules/gen-inp/gen-inp.c src/modules/gen-inp/gen-inp.h
+	  src/modules/unicode/unicode.c src/modules/unicode/unicode.h
+	  src/util/oxim2tab/Makefile.am src/util/oxim2tab/gencin.c
+	  src/util/oxim2tab/oxim2tab.c src/util/oxim2tab/oxim2tab.h
+	  src/xim/gui_status.c src/xim/oxim_main.c tables/Makefile.am :
+	  因為不再需要 sys.tab，所以相關的程式與編譯都要修改。
+
+2006-3-2  Firefly <firefly@opendesktop.org.tw>
+	* debian/* :
+	  加入 debian build spec。
+
+	* configure.ac oxim.spec.in :
+	  新酷音輸入法的 library 降一版次。
+
+2006-3-1  Firefly <firefly@opendesktop.org.tw>
+	* etc/oxim.conf.in :
+	  預設使用新酷音輸入法。
+	  改用新的全字庫輸入法參考檔。
+
+	* oxim.spec.in tables/Makefile.am :
+	  編譯新的全字庫輸入法。
+
+	* src/lib/ucs4toutf8.c src/modules/chewing/chewing.c
+	  src/xim/gui.c src/xim/gui_status.c :
+	  修正 gcc4 編譯時的警示訊息。
+
+	* tables/cns11643.cin tables/cnscj.cin tables/cnsimplex.cin
+	  tables/cnsphone.cin :
+	  新增 CNS11643、全字庫倉頡(中標倉頡)、全字庫簡易(中標簡易)
+	  、全字庫注音(中標注音)輸入法參考檔。
+
+	* tables/cj.cin tables/phone.cin tables/simplex.cin :
+	  移除舊的倉頡、簡易、注音輸入法參考檔。
+
+	正式釋出 1.0.1 版。
+
+2006-2-28 Firefly <firefly@opendesktop.org.tw>
+	* src/include/IC.h src/include/module.h src/include/oximtool.h
+	  src/lib/ucs4toutf8.c src/lib/wchs_to_mbs.c
+	  src/lib/im_comm/ascii_wb.c src/lib/im_comm/charcode.c
+	  src/modules/bimsphone/bimsphone.c
+	  src/modules/bimsphone/bimsphone.h
+	  src/modules/bimsphone/bimspinyin.c
+	  src/modules/chewing/chewing.c src/modules/gen-inp/gen-inp.c
+	  src/modules/gen-inp/gen-inp.h src/modules/unicode/unicode.c
+	  src/util/oxim2tab/gencin.c src/util/oxim2tab/gencin.h
+	  src/util/oxim2tab/oxim2tab.c src/util/oxim2tab/syscin.c
+	  src/xim/gui_preedit.c src/xim/oxim_main.c src/xim/xim.c
+	  src/xim/xim_IC.c :
+	  因「新酷音」輸入法使用與 OXIM 同名結構 wch_t，但長度不同，
+	  幾經思考，決定修正 OXIM，將 WCH_SIZE 改名為 UCH_SIZE，
+	  wct_t 改名為 uch_t，同時修正相關程式。
+
+	* src/lib/oxim_module.c :
+	  修正載入模組檢查，直接載入 .so 檔案，不要檢查 .la。
+
+	* configure.ac oxim.spec.in :
+	  版本編號升級為 1.0.1
+
+2006-2-24 Firefly <firefly@opendesktop.org.tw>
+	* src/modules/gen-inp/gen-inp.c src/xim/gui_preedit.c
+	  src/modules/chewing/chewing.c :
+	  修正編譯時的警示訊息。
+	* etc/oxim.conf.in :
+	  倉頡滿五碼不自動上字。
+
+2006-2-13 Firefly <firefly@opendesktop.org.tw>
+	* AUTHORS :
+	 更新作者資訊。
+
+2005-12-13 Firefly <firefly@opendesktop.org.tw>
+	* src/include/oximtool.h :
+	 將 wch_t 的兩個型態(s , wchar_t)統一為 8 bytes。
+
+2005-12-06 Firefly <firefly@opendesktop.org.tw>
+	* src/lib/oxim_module.c :
+	 自動找出第一個可用的輸入法模組。
+
+2005-12-05 Firefly <firefly@opendesktop.org.tw>
+	重新整理原始碼與相關檔案，並重新製作編譯相關檔案。
+
+2005-12-02 Firefly <firefly@opendesktop.org.tw>
+	* src/modules/gen-inp.c :
+	  自動判別傳統注音輸入法，依照注音符號排列規則。
+
+2005-11-29 Firefly <firefly@opendesktop.org.tw>
+	* src/oxim_main.c :
+	  修正錯字 Imput -> Input
+
+	* src/.depend src/Makefile.in src/lib/oximtool/.depend
+	  src/lib/oximtool/Makefile.in :
+	  將 src/module.c src/lib/oximtool/load_module.c 合併為
+	  src/lib/oximtool/oxim_module.c，並將舊檔移除。
+
+2005-11-28 Firefly <firefly@opendesktop.org.tw>
+	* src/Cinput/zh_hex/zh_hex :
+	  讓 UniCode 輸入法，Return 鍵也能上字。
+
+	* configure etc/oximrc.FREEBSD etc/oximrc.HPUX etc/oximrc.LINUX
+	  etc/oximrc.NETBSD etc/oximrc.UNKNOWN script/configure.in
+	  src/Cinput/Makefile.in :
+	  暫時取消編譯新酷音輸入法。
+
+	* src/qt-oxim/qoximinputcontext.h
+	  src/qt-oxim/qoximinputcontext_x11.cpp
+	  src/qt-oxim/qoximinputcontextplugin.cpp
+	  src/qt-oxim/qoximinputcontextplugin.h :
+	  重新修改 QT IM Module。
+
+2005-11-25 Firefly <firefly@opendesktop.org.tw>
+	* src/module.c src/Cinput/gen_inp/gen_inp.c
+	  src/Cinput/zh_hex/zh_hex.c src/include/module.h :
+	  修正輸入法設定簡化後，附加 encoding 的問題，
+	  會造成輸入法參數讀不到的情形。
+
+	* src/gui.c :
+	  變更 FcUtf8ToUcs4() 為 utf8_to_ucs4()。
+
+	* src/lib/oximtool/ucs4toutf8.c src/lib/oximtool/utf8toucs4.c :
+	  增加 Utf8 與 UCS4 互轉程式。
+
+	* src/lib/oximtool/Makefile.in src/lib/oximtool/.depend :
+	  編譯新增的 ucs4toutf8.c utf8toucs4.c。
+
+	* src/Cinput/zh_hex/zh_hex.c src/Cinput/zh_hex/zh_hex.h :
+	  將內碼輸入法改為 UniCode 輸入法。
+
+	* src/Cinput/gen_inp/gen_inp.c src/Cinput/im_comm/charcode.c
+	  src/include/module.h :
+	  因應 ucs4_to_utf8，所以修改 ccode_to_char() 參數數量。
+
+	* etc/oximrc.FREEBSD etc/oximrc.HPUX etc/oximrc.LINUX
+	  etc/oximrc.NETBSD etc/oximrc.UNKNOWN :
+	  新增 UniCode 內碼輸入法。
+
+	* script/Rules.in :
+	  重新安排程式與資料的路徑。
+
+	* src/oxim_main.c src/Cinput/bimsphone/bimsphone.c
+	  src/Cinput/gen_inp/gen_inp.c src/Cinput/im_comm/qphrase.c
+	  src/util/oxim2tab/oxim2tab.c :
+	  變更輸入法參考檔存放目錄名稱。
+
+	* src/module.c :
+	  變更模組存放目錄名稱。
+
+2005-11-24 Firefly <firefly@opendesktop.org.tw>
+	* src/Cinput/chewing/Makefile.in :
+	  加入 -lchewing。
+
+	* src/Cinput/chewing/chewing.c :
+	  修正亂碼，並將 memset() 改為 bzero
+
+	* src/Cinput/bimsphone/bimsphone.c :
+	  增加讀取 TABE_DB_DIR 之程式碼。
+
+	* cin/Makefile.in cin/Rules :
+	  不用 build 詞庫。
+
+	* Removed Files cin/tsi.src :
+	  已經不需要了。
+
+	* cin/jtcj_gb.cin cin/phonegb2.cin cin/pinyin.cin cin/pinyin0.cin
+	  cin/shuangpin.cin cin/telecode.cin cin/wubizixing.cin :
+	  移除輸入法參考檔。
+
+	* etc/oximrc.FREEBSD etc/oximrc.HPUX etc/oximrc.LINUX
+	  etc/oximrc.NETBSD etc/oximrc.UNKNOWN :
+	  更新系統預設輸入法。
+
+2005-11-23 Firefly <firefly@opendesktop.org.tw>
+	* src/qt-oxim/qoximinputcontext.h src/qt-oxim/qoximinputcontext_x11.cpp
+	  src/qt-oxim/qoximinputcontextplugin.cpp
+	   src/qt-oxim/qoximinputcontextplugin.h src/qt-oxim/oxim.pro :
+	  增加 QT IM MODULE 相關程式與檔案。
+
+	* src/Cinput/Makefile.in :
+	  新增編譯新酷音輸入法選項。Thanks Jim Huang <jserv@kaffe.org>
+
+	* src/Cinput/chewing/.depend src/Cinput/chewing/Makefile.in
+	  src/Cinput/chewing/chewing.c :
+	  新酷音輸入法模組。 Thanks Jim Huang <jserv@kaffe.org>
+
+2005-11-22 Firefly <firefly@opendesktop.org.tw>
+	* src/gtk-oxim/gtkimcontextoxim.c src/gtk-oxim/gtkimcontextoxim.h
+	  src/gtk-oxim/im-oxim.c :
+	  1、判斷 UTF-8 以及亞洲國家常用編碼，如果不是，一律在內部使用 UTF-8。
+	  2、移除 suatus 狀態視窗相關程式碼，因為不需要。
+
+2005-11-21 Firefly <firefly@opendesktop.org.tw>
+	* src/xim.c :
+	  1.擴大 locale 傳回範圍，以便支援所有的與言，包括 C、POSIX。
+	  2.移除 utf8_to_syscharset()
+	  3.不用 XmbTextListToTextProperty()
+	    改用 Xutf8TextListToTextProperty()
+
+	* src/lib/IMdkit/i18nMethod.c :
+	  擴大 locale 傳回範圍，以便支援所有的與言，包括 C、POSIX。
+
+	* etc/locale.list :
+	  紀錄所有 Locale Name(locale -a > etc/locale.list)。
+
+	* src/gui_preedit.c :
+	  Remove unused function => gui_status_draw()
+
+2005-11-17 Firefly <firefly@opendesktop.org.tw>
+	正式更名為 OXIM(Open X Input Method)
+
+2005-11-16 Firefly <firefly@opendesktop.org.tw>
+	* oxim_main.c Cinput/bimsphone/bimsphone.c
+	  Cinput/bimsphone/bimspinyin.c util/cin2tab/Makefile.in
+	  util/cin2tab/bimscin.c util/cin2tab/cin2tab.c
+	  util/cin2tab/cin2tab.h util/cin2tab/gencin.c
+	  util/cin2tab/syscin.c :
+	  將 cin2tab 轉出的 tab 檔壓縮處理，讀取時亦同。
+
+	* src/gui.c src/oxim_main.c src/include/gui.h
+	  etc/oximrc.FREEBSD etc/oximrc.HPUX etc/oximrc.LINUX
+	  etc/oximrc.NETBSD oximrc.UNKNOWN :
+	  簡化 oximrc 設定，增加顏色設定功能。
+
+	* src/gui_tray.c :
+	  沒有 Input content 時，顯示 En Icon。
+
+2005-11-15 Firefly <firefly@opendesktop.org.tw>
+	修正 gcc 4 編譯出現的警示訊息。
+
+2005-11-14 Firefly <firefly@opendesktop.org.tw>
+	* src/Chinput/bimsphone/bimsphone.c :
+	  修正詞音 AUTO_SELECTION 為 NO 的情況下，無法上字的 bug。
+
+	* src/gtk-oxim/gtkimcontextoxim.c :
+	  修正 gtk 2.4.0 才有的 GTK_IM_PREEDIT_NONE & GTK_IM_STATUS_NONE。
+
+	* src/util/cin2tab/gencin.c :
+	  移除未使用的變數。
+
+2005-11-13 Firefly <firefly@opendesktop.org.tw>
+	* 新增 debian 編譯與安裝相關目錄與檔案 : Thanks for root@calno.com。
+
+2005-11-12 Firefly <firefly@opendesktop.org.tw>
+
+	以 XCIN 2.5.3 pre3 為基礎修改的 3.1.0 正式釋出。

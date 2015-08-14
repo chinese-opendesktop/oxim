@@ -1,0 +1,13 @@
+Source: oxim
+Section: utils
+Priority: optional
+Maintainer: root <root@unknown>
+Build-Depends: debhelper (>= 5), libgtk2.0-dev (>= 2.4.0-1), libqt3-mt-dev, libchewing3-dev, libxpm-dev, libxtst-dev
+Standards-Version: 3.7.2
+
+Package: oxim
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Recommends: im-switch
+Description: <insert up to 60 chars description>
+ <insert long description, indented with spaces>

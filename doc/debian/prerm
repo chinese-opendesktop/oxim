@@ -1,0 +1,33 @@
+#!/bin/sh
+# prerm script for oxim
+
+set -e
+
+ua_remove () {
+        update-alternatives \
+        --remove xinput-$1 \
+        /etc/X11/xinit/xinput.d/$2 ;
+}
+
+case "$1" in
+    remove|upgrade|deconfigure)
+        ua_remove all_ALL oxim
+        ua_remove zh_CN   oxim
+        ua_remove zh_TW   oxim
+        ua_remove zh_HK   oxim
+        ua_remove zh_SG   oxim
+        ua_remove ja_JP   oxim
+        ua_remove ko_KR   oxim
+        ua_remove th_TH   oxim
+        ;;
+    failed-upgrade)
+        ;;
+    *)
+        echo "prerm called with unknown argument \`$1'" >&2
+        exit 1
+   ;;
+esac
+
+#DEBHELPER#
+
+exit 0

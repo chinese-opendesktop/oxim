@@ -1,0 +1,897 @@
+<!DOCTYPE UI><UI version="3.0" stdsetdef="1">
+<class>OXIM_Setup</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>OXIM_Setup</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>423</width>
+            <height>387</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Open X Input Method 輸入法設定</string>
+    </property>
+    <property name="sizeGripEnabled">
+        <bool>true</bool>
+    </property>
+    <vbox>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <property name="margin">
+            <number>11</number>
+        </property>
+        <property name="spacing">
+            <number>6</number>
+        </property>
+        <widget class="QTabWidget">
+            <property name="name">
+                <cstring>tabWidget</cstring>
+            </property>
+            <widget class="QWidget">
+                <property name="name">
+                    <cstring>Widget8</cstring>
+                </property>
+                <attribute name="title">
+                    <string>輸入法(&amp;I)</string>
+                </attribute>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>PropertyButton</cstring>
+                    </property>
+                    <property name="enabled">
+                        <bool>false</bool>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>310</x>
+                            <y>220</y>
+                            <width>80</width>
+                            <height>30</height>
+                        </rect>
+                    </property>
+                    <property name="text">
+                        <string>屬性(P)</string>
+                    </property>
+                    <property name="toolTip" stdset="0">
+                        <string>輸入法的詳細設定</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>GlobolButton</cstring>
+                    </property>
+                    <property name="enabled">
+                        <bool>false</bool>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>310</x>
+                            <y>180</y>
+                            <width>80</width>
+                            <height>30</height>
+                        </rect>
+                    </property>
+                    <property name="text">
+                        <string>通用設定</string>
+                    </property>
+                    <property name="toolTip" stdset="0">
+                        <string>設定按鍵組合與輸入法別名</string>
+                    </property>
+                </widget>
+                <widget class="QListView">
+                    <column>
+                        <property name="text">
+                            <string>輪換</string>
+                        </property>
+                        <property name="clickable">
+                            <bool>false</bool>
+                        </property>
+                        <property name="resizable">
+                            <bool>false</bool>
+                        </property>
+                    </column>
+                    <column>
+                        <property name="text">
+                            <string>輸入法名稱</string>
+                        </property>
+                        <property name="clickable">
+                            <bool>false</bool>
+                        </property>
+                        <property name="resizable">
+                            <bool>true</bool>
+                        </property>
+                    </column>
+                    <column>
+                        <property name="text">
+                            <string>快速鍵</string>
+                        </property>
+                        <property name="clickable">
+                            <bool>false</bool>
+                        </property>
+                        <property name="resizable">
+                            <bool>true</bool>
+                        </property>
+                    </column>
+                    <column>
+                        <property name="text">
+                            <string>==</string>
+                        </property>
+                        <property name="clickable">
+                            <bool>false</bool>
+                        </property>
+                        <property name="resizable">
+                            <bool>false</bool>
+                        </property>
+                    </column>
+                    <property name="name">
+                        <cstring>IMListView</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>10</x>
+                            <y>10</y>
+                            <width>290</width>
+                            <height>240</height>
+                        </rect>
+                    </property>
+                    <property name="font">
+                        <font>
+                        </font>
+                    </property>
+                    <property name="allColumnsShowFocus">
+                        <bool>true</bool>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>DefaultButton</cstring>
+                    </property>
+                    <property name="enabled">
+                        <bool>false</bool>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>310</x>
+                            <y>140</y>
+                            <width>80</width>
+                            <height>30</height>
+                        </rect>
+                    </property>
+                    <property name="text">
+                        <string>預設</string>
+                    </property>
+                    <property name="toolTip" stdset="0">
+                        <string>將選定的輸入法設為系統預設(Ctrl+Space)</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>AddIM</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>10</x>
+                            <y>260</y>
+                            <width>120</width>
+                            <height>30</height>
+                        </rect>
+                    </property>
+                    <property name="text">
+                        <string>安裝輸入法</string>
+                    </property>
+                    <property name="toolTip" stdset="0">
+                        <string>從本機或網路安裝新的輸入法</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>DeleteIM</cstring>
+                    </property>
+                    <property name="enabled">
+                        <bool>false</bool>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>137</x>
+                            <y>259</y>
+                            <width>110</width>
+                            <height>31</height>
+                        </rect>
+                    </property>
+                    <property name="text">
+                        <string>移除輸入法</string>
+                    </property>
+                    <property name="toolTip" stdset="0">
+                        <string>從本機移除輸入法</string>
+                    </property>
+                </widget>
+            </widget>
+            <widget class="QWidget">
+                <property name="name">
+                    <cstring>Widget9</cstring>
+                </property>
+                <attribute name="title">
+                    <string>字型(&amp;F)</string>
+                </attribute>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>textLabel1</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>10</x>
+                            <y>20</y>
+                            <width>81</width>
+                            <height>21</height>
+                        </rect>
+                    </property>
+                    <property name="text">
+                        <string>偏好字型 ：</string>
+                    </property>
+                </widget>
+                <widget class="QGroupBox">
+                    <property name="name">
+                        <cstring>groupBox1</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>7</x>
+                            <y>59</y>
+                            <width>381</width>
+                            <height>220</height>
+                        </rect>
+                    </property>
+                    <property name="title">
+                        <string>字型大小(&amp;Pixels)</string>
+                    </property>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>textLabel2</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>10</x>
+                                <y>30</y>
+                                <width>70</width>
+                                <height>21</height>
+                            </rect>
+                        </property>
+                        <property name="text">
+                            <string>組字區：</string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>textLabel4</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>10</x>
+                                <y>90</y>
+                                <width>64</width>
+                                <height>21</height>
+                            </rect>
+                        </property>
+                        <property name="text">
+                            <string>狀態區：</string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>textLabel5</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>10</x>
+                                <y>120</y>
+                                <width>77</width>
+                                <height>21</height>
+                            </rect>
+                        </property>
+                        <property name="text">
+                            <string>快速選單：</string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>textLabel6</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>10</x>
+                                <y>150</y>
+                                <width>77</width>
+                                <height>20</height>
+                            </rect>
+                        </property>
+                        <property name="text">
+                            <string>符號表：</string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>textLabel7</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>10</x>
+                                <y>180</y>
+                                <width>77</width>
+                                <height>21</height>
+                            </rect>
+                        </property>
+                        <property name="text">
+                            <string>XCIN 風格：</string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>textLabel3</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>10</x>
+                                <y>60</y>
+                                <width>70</width>
+                                <height>21</height>
+                            </rect>
+                        </property>
+                        <property name="text">
+                            <string>選字區：</string>
+                        </property>
+                    </widget>
+                    <widget class="QSpinBox">
+                        <property name="name">
+                            <cstring>PreeditSize</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>90</x>
+                                <y>30</y>
+                                <width>61</width>
+                                <height>21</height>
+                            </rect>
+                        </property>
+                        <property name="maxValue">
+                            <number>48</number>
+                        </property>
+                        <property name="minValue">
+                            <number>12</number>
+                        </property>
+                    </widget>
+                    <widget class="QSpinBox">
+                        <property name="name">
+                            <cstring>SelectSize</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>90</x>
+                                <y>60</y>
+                                <width>61</width>
+                                <height>21</height>
+                            </rect>
+                        </property>
+                        <property name="maxValue">
+                            <number>48</number>
+                        </property>
+                        <property name="minValue">
+                            <number>12</number>
+                        </property>
+                    </widget>
+                    <widget class="QSpinBox">
+                        <property name="name">
+                            <cstring>StatusSize</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>90</x>
+                                <y>90</y>
+                                <width>61</width>
+                                <height>21</height>
+                            </rect>
+                        </property>
+                        <property name="maxValue">
+                            <number>18</number>
+                        </property>
+                        <property name="minValue">
+                            <number>12</number>
+                        </property>
+                    </widget>
+                    <widget class="QSpinBox">
+                        <property name="name">
+                            <cstring>MenuSize</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>90</x>
+                                <y>120</y>
+                                <width>61</width>
+                                <height>21</height>
+                            </rect>
+                        </property>
+                        <property name="maxValue">
+                            <number>20</number>
+                        </property>
+                        <property name="minValue">
+                            <number>12</number>
+                        </property>
+                    </widget>
+                    <widget class="QSpinBox">
+                        <property name="name">
+                            <cstring>SymbolSize</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>90</x>
+                                <y>150</y>
+                                <width>61</width>
+                                <height>21</height>
+                            </rect>
+                        </property>
+                        <property name="maxValue">
+                            <number>24</number>
+                        </property>
+                        <property name="minValue">
+                            <number>12</number>
+                        </property>
+                    </widget>
+                    <widget class="QSpinBox">
+                        <property name="name">
+                            <cstring>XCINSize</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>90</x>
+                                <y>180</y>
+                                <width>61</width>
+                                <height>21</height>
+                            </rect>
+                        </property>
+                        <property name="maxValue">
+                            <number>48</number>
+                        </property>
+                        <property name="minValue">
+                            <number>12</number>
+                        </property>
+                    </widget>
+                    <widget class="QIconView">
+                        <item>
+                            <property name="text">
+                                <string>組字區</string>
+                            </property>
+                            <property name="pixmap">
+                                <pixmap>image0</pixmap>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>選字區</string>
+                            </property>
+                            <property name="pixmap">
+                                <pixmap>image1</pixmap>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>狀態區</string>
+                            </property>
+                            <property name="pixmap">
+                                <pixmap>image2</pixmap>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>快速選單</string>
+                            </property>
+                            <property name="pixmap">
+                                <pixmap>image3</pixmap>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>符號表</string>
+                            </property>
+                            <property name="pixmap">
+                                <pixmap>image4</pixmap>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>XCIN 風格</string>
+                            </property>
+                            <property name="pixmap">
+                                <pixmap>image5</pixmap>
+                            </property>
+                        </item>
+                        <property name="name">
+                            <cstring>iconView1</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>160</x>
+                                <y>20</y>
+                                <width>211</width>
+                                <height>191</height>
+                            </rect>
+                        </property>
+                        <property name="font">
+                            <font>
+                                <pointsize>10</pointsize>
+                                <bold>1</bold>
+                                <underline>1</underline>
+                            </font>
+                        </property>
+                        <property name="acceptDrops">
+                            <bool>false</bool>
+                        </property>
+                        <property name="selectionMode">
+                            <enum>NoSelection</enum>
+                        </property>
+                    </widget>
+                </widget>
+                <widget class="QComboBox">
+                    <property name="name">
+                        <cstring>FontName</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>101</x>
+                            <y>10</y>
+                            <width>280</width>
+                            <height>30</height>
+                        </rect>
+                    </property>
+                    <property name="editable">
+                        <bool>true</bool>
+                    </property>
+                    <property name="duplicatesEnabled">
+                        <bool>false</bool>
+                    </property>
+                </widget>
+            </widget>
+            <widget class="QWidget">
+                <property name="name">
+                    <cstring>TabPage</cstring>
+                </property>
+                <attribute name="title">
+                    <string>片語(&amp;P)</string>
+                </attribute>
+                <widget class="QTable">
+                    <column>
+                        <property name="text">
+                            <string>Alt + Shift</string>
+                        </property>
+                    </column>
+                    <property name="name">
+                        <cstring>PharseTable</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>10</x>
+                            <y>20</y>
+                            <width>240</width>
+                            <height>261</height>
+                        </rect>
+                    </property>
+                    <property name="numRows">
+                        <number>0</number>
+                    </property>
+                    <property name="numCols">
+                        <number>1</number>
+                    </property>
+                    <property name="selectionMode">
+                        <enum>SingleRow</enum>
+                    </property>
+                </widget>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>textLabel1_3</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>267</x>
+                            <y>19</y>
+                            <width>121</width>
+                            <height>271</height>
+                        </rect>
+                    </property>
+                    <property name="paletteForegroundColor">
+                        <color>
+                            <red>0</red>
+                            <green>0</green>
+                            <blue>127</blue>
+                        </color>
+                    </property>
+                    <property name="font">
+                        <font>
+                            <pointsize>10</pointsize>
+                        </font>
+                    </property>
+                    <property name="text">
+                        <string>您可以在左方的表格內，建立您經常使用的片語、詞句或是符號，往後在輸入的時候，就可以搭配 Alt+Shift 按鍵，達到快速輸入的目的。</string>
+                    </property>
+                    <property name="alignment">
+                        <set>WordBreak|AlignTop</set>
+                    </property>
+                </widget>
+            </widget>
+            <widget class="QWidget">
+                <property name="name">
+                    <cstring>TabPage</cstring>
+                </property>
+                <attribute name="title">
+                    <string>關於(&amp;A)</string>
+                </attribute>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>VersionLabel</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>8</x>
+                            <y>9</y>
+                            <width>380</width>
+                            <height>30</height>
+                        </rect>
+                    </property>
+                    <property name="font">
+                        <font>
+                            <pointsize>20</pointsize>
+                        </font>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                </widget>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>textLabel2_2</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>10</x>
+                            <y>40</y>
+                            <width>370</width>
+                            <height>18</height>
+                        </rect>
+                    </property>
+                    <property name="text">
+                        <string>作者：Firefly &lt;firefly@opendesktop.org.tw&gt;</string>
+                    </property>
+                </widget>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>textLabel1_2</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>10</x>
+                            <y>60</y>
+                            <width>370</width>
+                            <height>22</height>
+                        </rect>
+                    </property>
+                    <property name="text">
+                        <string>網址：&lt;font color="#5555ff"&gt;http://opendesktop.org.tw&lt;/font&gt;</string>
+                    </property>
+                </widget>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>textLabel3_2</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>10</x>
+                            <y>90</y>
+                            <width>80</width>
+                            <height>16</height>
+                        </rect>
+                    </property>
+                    <property name="font">
+                        <font>
+                            <pointsize>10</pointsize>
+                            <bold>1</bold>
+                        </font>
+                    </property>
+                    <property name="text">
+                        <string>授權宣告：</string>
+                    </property>
+                </widget>
+                <widget class="QTextEdit">
+                    <property name="name">
+                        <cstring>textEdit1</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>10</x>
+                            <y>110</y>
+                            <width>381</width>
+                            <height>180</height>
+                        </rect>
+                    </property>
+                    <property name="font">
+                        <font>
+                            <pointsize>10</pointsize>
+                        </font>
+                    </property>
+                    <property name="text">
+                        <string>Copyright (c) 2006 by  OpenDesktop.org.tw
+
+This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA</string>
+                    </property>
+                    <property name="wordWrap">
+                        <enum>NoWrap</enum>
+                    </property>
+                    <property name="readOnly">
+                        <bool>true</bool>
+                    </property>
+                </widget>
+            </widget>
+        </widget>
+        <widget class="QLayoutWidget">
+            <property name="name">
+                <cstring>Layout1</cstring>
+            </property>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <property name="margin">
+                    <number>0</number>
+                </property>
+                <property name="spacing">
+                    <number>6</number>
+                </property>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>buttonOk</cstring>
+                    </property>
+                    <property name="text">
+                        <string>確定(&amp;O)</string>
+                    </property>
+                    <property name="accel">
+                        <string>Alt+O</string>
+                    </property>
+                    <property name="autoDefault">
+                        <bool>true</bool>
+                    </property>
+                    <property name="default">
+                        <bool>true</bool>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>buttonCancel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>取消(&amp;C)</string>
+                    </property>
+                    <property name="accel">
+                        <string>Alt+C</string>
+                    </property>
+                    <property name="autoDefault">
+                        <bool>true</bool>
+                    </property>
+                </widget>
+            </hbox>
+        </widget>
+    </vbox>
+</widget>
+<images>
+    <image name="image0">
+        <data format="XPM.GZ" length="2538">789cb596c14e84301086ef3c45436fc4ec2ebb0634c64730f168623c94b6d03dec45d78331bebb9996a1054ab7d5e56f02fd59f8663a9d2c6c0bf2f2fc448a6df67166e723275cb1775288cfd3e9ebf5edf13bcbef2ab2af48b923657e93e52de184eeb4c02ab46d0b566a5bc200dba135bf6ec0d687baac0f60b9b62da218d8e6b6d9df73b00d5809aac00ab0ad8401966aaba5c9ab4893e9f5c57a7273750d64162f1a738f434e5968c43d2964deeb2f6421e19a1438a3d49dfd9f6c9a51f63186e302597431644b726360a425722762c840b464393c03de4f56ca9031773cbb64787a441e2a2c055cf3916dc638c3b34bd66b1658039329d6029c8fac94cd1e63ccc9fedeb0f339d9e586c966d55332567b4a1e7343645cb78fecdbc169572c93e73b78a9ebc6ec50358cec9e85ab61d86bd4d908ab6d63f8aa01634c46bf4cb67d9c4686da84c998b5e854af39d910ec8ed9acc3e4a99677f0b2d2fe4513c0516a567fc326bc5fa3b559f14be6e721fb05224149fb</data>
+    </image>
+    <image name="image1">
+        <data format="XPM.GZ" length="4404">789ced98c16edb300c86ef790a23ba05439b34e9bc62d8230cd871c0b08345598e0df4b2758761d8bb4f3f695a72d220923b601b30a6a9fd27fa488a64d4a0b79beae387f7d5e676f5f5a979eaa9a263f3a5dab86f8f8fdf3f7d7ef763b5be3f54f55db50b3feb57ab755b5165b6c16a0f492c77dbdd9b2de400b9dfd50f8d853c4e92206f20eb7dbdabf7900da43dd8bb077eb7836c293c0e908ea50b8f7b48cb12f61ad243fa160fc87e929c9561c9c671171993a6dc9a91b4c5f6c74972767675d4b6e450745deee802e9b15656628d2363c893f7649cfaa38e7f9f91d6a26ce4b1b26d39a68727d1d1c8a4a4a36ecc051eaced42b8d18f413c5cc5f0fa9c0c898dd98a0b64e9087e420c7246ab106e5d4ab62d56aa6759052ff01648ab5ec32e4c5a21e42aa4d6826b64b83ea327cd14bb8e2439cfa4d69673ee344a6c23673aef8a917d3aae487897bd4f31dd44fab1ab27150a4b1dba6a473d752120b3aeb85332790773e0e2474376293d627d1ad378d28a38e9093f937dfaf3e9936c51019930f42328ee074d53fb3c699ce77e776125ba469df635f6f712a935279edd2ead909589541ff3890ffb1a5f0fd7a9f7e94c61cd736491fd06b229b3a49f4d59c4195972d69e90c76cfb4f26d60f721dfa3c52d7e36ee8a515f1b5cbe4d0a76449cc7e4849b94f22e6643be67912316b9f2070ff3232a74273320e7a0989ebb26c9793a125bd665d466297cb48a92926308fe4299d3c206363f2c818fa3cfb4cf292fdc564c9dcce6b2964dedceacca9927e66c44ce64dcfa07232669b7bf629193f9ba5a4462b8929bb022164ee699246c4e95b7e0e8149e35e23d3ba9691e9c923996ac657c8593f954cffd65c26e3e9aae741fe3994e65d766a5eb17f9a2cf9c23827977d632cfc8eca76f382ff0afc7cbbfa0576c3b64c</data>
+    </image>
+    <image name="image2">
+        <data format="XPM.GZ" length="2682">789cad954b6fda401485f7f91556d84555c21bacaa0b1202714a4c9c55a5aa0b7b669c81c40989216057fdefe5be26e0aa6d161ce41b7d77ee3d7340449c9d78df6e6fbc93b3a37c192f67ca53367ef54ef42acb8aef3fbefc3c3aeef5bc66db6b77bdc6f1a7a363e329af564701960ef174cdd8209c2136046b802dbfddee25803160a7d96df80af00a31ee76e226e0d8610b70e4b00d78c9e8d3e9d0219e5e03769b5d1de3458143bce80231ee7512dc3d7788bb378c7e8231260e71f8ab431c1e00f65a72ba7188a7b78c3ac1185387182374a801df08fb751a5e39c4e19cb141c37788899c468c7cfa0ad86ff47b0a533d33260a9d5f109bfdbec2904f8c4aa1d529e2f6a23eee2e187dd501cc18b5c28b1e01fda69f681c7e406cf94aa37382d8f67d8dbb73464d982226719d8615a28a1b747a0fa8eaf002b480a9811760e130055c32a6841a31153cad1d4ea7f8358e0fa71a1926879218aa43e9dd5003ea8f6fea8afe3054464921a55aa73bfba974a5714f623f59fcc75bd6a9b13b344b79d5a61f319ccff57cce05f5a01f66f3b97d14d65b32c61a10352a863c27865996994c0a483fcd74963d5b825dc940c590db62b8d8d78b7e992d16f6959ec582b2613e3b7bc191aa216f8a619eeb3ce792e7cbe54af2bcd925b5d6f4ac96eb1536aa86b4998be166b3311b29db3fa628f1e3b2e5c0984d012bc58056cb018e540d69712386e75549c2f20208cde9124b9df3aa21ef89e170a887432e2897f012fb90f092afc0ceb06ac87b62381a8dcc480ac8251c0381bd9584631aa818f2de8ee1be38a1b15744f0401d171f35d438c5ed71716525e3bbe16ee6ff1906416002294170bd8dc3094d791d04f81996fc96af71a46a488b81187edd5731290b1a2c4a64fc0c6feca4d89e4c7044efcbf0a61886a10e432e61584ccba94b088d691986b716dac61634a3cdbea81b8a61144526921245eb3b7aa2e86e1d3919f35effa69dff94c3480c0ffc2375d89fd15f9f8f7e036f6c3c72</data>
+    </image>
+    <image name="image3">
+        <data format="XPM.GZ" length="13465">789ced5a4d8f1b370cbdefaf3056b7a098648b344550f42714e8b140d1832c8b4a0eb9b4e9a128fadfabc7474a1a7fcc7a3688bdde965ecf0e351e9b4f14c927695ebfdafcf2f34f9b57afeffef81c3f7f4c9bf421febe79b5fbf3d3a7bf7efdedc7bfefee1fdebfddbcfb7ef3f066f370ffcdddfd769336e18d0ad49dab2250a3aa0f78414daef2ea07a8dbb7db6fdf27a8196a4ef5f5166a5075575fdf419d5485bc835aa04ac60baaa8aaa21fbe7939074588fd08d96efb95ad09b418f85e2b213ddeb6db9dd61a8a885f872ddb6db5b6da3645d8a886aba531d457b65f907616e1cf124b142028b81f9f5d8b0277a770bc6db783cdd4d9125290f9a7dd17b0209612836cb752cf24c2d228b8566d145cc9cd1bf834519408ab3b8a7aa7f8d5736437885b396b4b18fa29388a204484ff1d89a3c8e86ca97f2147a0a8de2986c27c417feca3102010fce7c8e2f79c8f62828d85318adb52615b49d6469f88a3d05f75bfb4de7214414705ad238a121d858e18419fb87d735f6014d6ef15f8a17e479695232a95c3f3ea027e8b5a5c955452ed7b7dd36f38ba377a74e3d7dd3aa240174fe60b8ef668b6fbd80a8ad0e30271d5af9d2b18e51ecd6a596ba370a48594724944a97eaabd061f1ea028bd8f8102bdeabec058af2fa232bfeda3a8b9a0d43b82b42c702e0a4640c25d66590ad6a67eb0e8d65105144b230a7db887a2cc7c514c9fbaa53ea2d46f5519f3eeb982f06514b8659a8334566867b0e83e0785c745888e22c79ea3bccb0da3e1f5e82e16174198a3d684f76817b51468ad6a3ad218dd8fa360ff06ad126228423ce60be6a01c1d45e0500b1ddd9a4ceb51e128341ec42d048a9ea30e51786d6c55af78d543c245d59bd70b60a8178478d18a4fe3dcbc3856bd1528988bd4be5966b3b8283c436ca45cdf89d9496368cac99380fb02a3b20e50bc4513b6b5788f0345b5afd644cf1e35f4b546d6d6cc3cf094aa37c9bcea35742d2e94f0854998eba5d9e8568f281ef9a95a2b837ecb24bd1a88b6eb8f682519dfe78bd926cd346bedc7c7e5bfc3699fbf0c552f740ece1733ffc8cbbd161c5e61ebf8cd4fe1e84f958ec2f269e639f8087293d81c02c7a8ac9739b55e39cdd8dbac03f7ac91ca330e261b1ef5b87638b398a3007fd0eaa5f19495a7b2c75193abc999d9c7ab35ae9c66ec08d5580e42f65149a1723e99cf351a274fbd56a43d3ff7aaa71c3690d5194f052ab53298adc636447db2c0d8bb2fd6609834fd2799b3dca328f672b9573ddcdf6a81b097618566d38854aa08c5db511b17187bf7c59ae830166e3c3081138eb33c705a6823279fa1505b51c3d88ab8305f28441fe3fc4f5f2c30f6a7c685f31063b6a8d97d9607be41163272f2398a1a17601382df8535c57294286ff2be35649527d62b0b8cdde6e26be362c609b57ea3da1ea23839a25a7f2bcad2b96aedff394b22f3f31c759cb133cee0df15188ea0d0be616be2385a4431f938765b995bd1e359fbdec6bc90a073e42d31763dcfce1cd7a0482750d8247c86c2f3ee7caed76dd51974c14c817dcab9470c3ebbabdf759ab14764e7a020566080a9d97354480728865504e7e4bbdd9cd3b6aa472c3ad760760d36a7e60c0a714f1c4b8c5ddb03d645d60da99c10d1c6b9137bdaf2519d77d75c2bd49c9387b48fa28f28dacfb983188a6cf510d989f6c969c6ae68e99975554fe3cdf2433bb70cc19651b3023343317261c6af9e99e6c7207d2e729ab10fd67c5d36b56a7ef1dce565a188a1bd26eacead97f9776f27a3729dabd79762e77db519f1c8e3c8209656cc89c2473ed771c800ed9eb26a06fee52894dc153d32b26d5d4964817f8f287c552e6bf1f025c3b599f60b514c45ad28d1d7991aaf5ee0dfac82c64f02384b36ee450496bd2e88821c488fa1efaea0429fe6df3a8aacaa1bdb0d2ce4ac9fabe7175f8a62e4d2d27d31f08ca32be641772e54d7116977b51155e257ae177b28acef51bdc53876f3c5e91573322cdf83413c73ae4e0cacff17443195d6e7c772d471fe6d1c8539597381dfa3b35c013bbf6c74dbfcc75627dbdcda72d451fead8cd55048e4a2b3ddd37be1b2d11d5a9f4fd3922fc615736402a208ba62925b66239a8bc7c5c45926de383fe68b43fe0d349a0154f0799ba7b6dc152e1cdd2d4379a6d59d2169e7c7f8376d7754ba2e1246ff796ebb188aa92f5c3b37d79a15faf931fe3dac6adb4a81ae800fdf76d9b8b86df91fc5f31143f1e1b6c550c86dcb8b1a51372e2f0b05f7e97aad5db94e7c65e94f7929cb1e76dcd73d59735d1979d47cf6d966de3720238ff2a7727c5fd1f7929ebfecfb82fbc1ee89705b28b8b79bf95cc7d476c064ed06c49564f405e76a484e21ced7ce9ebbecc585eddbfbaac6b5ad3b57465ff49d38662b59b75b7d45e9eb51dc010eb65a83cde22b9bb642465f604d83fbddba23768328f86404ac17199f06b9b67de7497f82c2f7e2f084025afc29bd5b9097c5696f5beefff9e1ee5f5eaced6e</data>
+    </image>
+    <image name="image4">
+        <data format="XPM.GZ" length="3062">789ced94414bc4301085effd1543732bd2ddaaac2ce24f103c0ae22133d9a287bdaceb41c4ff6e27e9d0a4b1edd28de0cabef6f21ed3978fb4e9a280c7877b2816d9db5eef5f09e845efa030efdbedc7d3f3dd6796df5470b5861554f945961b2050cb4675cd16adad9695b38a2d5ee3e59ad8966c37ac155b625b6ff862abadb5b2c36994ba4a2591abd27d95339281aa39c9992a1915523f31e620aa6e4c12420c13b47748d5ce0c54752b62986094fc5c453235b23331b928a88a77a6d35f7a8367aadfa44a729dc45e517bc6784563bac3ec339846a827a990dc395451953fe3969ba092c74b8fb04f8574109554298f30a672c75eb54fc8d08c372855a5b8f1aab124a49aac3a3daa66a35351f909d71e41e527f2b926a13aeabb1a4afeff5ff4eb36fb067000dcad</data>
+    </image>
+    <image name="image5">
+        <data format="XPM.GZ" length="2810">789ced96cf4ac43010c6ef7d8ad0de8ab8ab2208e2232c7814c443be71831ef6a2eb4116df5d9334dd9966b246ec45dc816dfbe5cf6fbfcc4ca18bdedcddae4cbf685eb776fb4c869eec8be91fdf369bf7fb879b5dd35e2dcdc5b9b93467ed49d35a43a65b86f0b24bd2392f11a55bbbb597344817674fbd746e9433476076b3c691f9df997686283001b606fc01f930d7442526c40eaf28441a9717a271366895b9dfc20c612a20245ba431c14f096221d0c8d42015e6389b9c4219844890fc878cf9559dd11594834e52c2ce7eb046327331fbf2ec321f353562d9cb4da9bd54552376d37c9698c51a4d7c4673459f60ccf0c3219fa2150553f417f8d9c35ded2570a7714fddd98b35824c68f4f2bb1a89b77b0fc2d0ad1a73f2a6e63d6fadf4191f91ae0a33e15255a7cc6f83aa56fd8c591d47e65f61cefdadf871dd7c025f819dac</data>
+    </image>
+</images>
+<connections>
+    <connection>
+        <sender>buttonOk</sender>
+        <signal>clicked()</signal>
+        <receiver>OXIM_Setup</receiver>
+        <slot>UpdateConfig()</slot>
+    </connection>
+    <connection>
+        <sender>buttonCancel</sender>
+        <signal>clicked()</signal>
+        <receiver>OXIM_Setup</receiver>
+        <slot>reject()</slot>
+    </connection>
+    <connection>
+        <sender>DefaultButton</sender>
+        <signal>clicked()</signal>
+        <receiver>OXIM_Setup</receiver>
+        <slot>DefaultButton_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>GlobolButton</sender>
+        <signal>clicked()</signal>
+        <receiver>OXIM_Setup</receiver>
+        <slot>GlobolButton_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>IMListView</sender>
+        <signal>clicked(QListViewItem*)</signal>
+        <receiver>OXIM_Setup</receiver>
+        <slot>IMListView_clicked(QListViewItem*)</slot>
+    </connection>
+    <connection>
+        <sender>PropertyButton</sender>
+        <signal>clicked()</signal>
+        <receiver>OXIM_Setup</receiver>
+        <slot>PropertyButton_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>AddIM</sender>
+        <signal>clicked()</signal>
+        <receiver>OXIM_Setup</receiver>
+        <slot>AddIM_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>DeleteIM</sender>
+        <signal>clicked()</signal>
+        <receiver>OXIM_Setup</receiver>
+        <slot>DeleteIM_clicked()</slot>
+    </connection>
+</connections>
+<includes>
+    <include location="local" impldecl="in declaration">globolsetting.h</include>
+    <include location="local" impldecl="in declaration">gencin.h</include>
+    <include location="local" impldecl="in declaration">qfontdatabase.h</include>
+    <include location="local" impldecl="in declaration">qbuttongroup.h</include>
+    <include location="local" impldecl="in declaration">chewing.h</include>
+    <include location="local" impldecl="in declaration">installim.h</include>
+    <include location="local" impldecl="in declaration">qmap.h</include>
+    <include location="local" impldecl="in declaration">oximtool.h</include>
+    <include location="local" impldecl="in implementation">oxim-setup.ui.h</include>
+</includes>
+<slots>
+    <slot specifier="non virtual">IMListView_clicked( QListViewItem * item )</slot>
+    <slot specifier="non virtual">DefaultButton_clicked()</slot>
+    <slot specifier="non virtual">GlobolButton_clicked()</slot>
+    <slot specifier="non virtual">UpdateConfig()</slot>
+    <slot specifier="non virtual">PropertyButton_clicked()</slot>
+    <slot specifier="non virtual">RunGenCinForm( int idx, iminfo_t * imp )</slot>
+    <slot specifier="non virtual">RunChewing( int idx, iminfo_t * imp )</slot>
+    <slot>AddIM_clicked()</slot>
+    <slot specifier="non virtual" returnType="bool">CopyBinaryFile( QString target, QString source )</slot>
+    <slot>DeleteIM_clicked()</slot>
+</slots>
+<functions>
+    <function access="private" specifier="non virtual" returnType="int">getIndexByItem( QListViewItem * item )</function>
+    <function access="private" specifier="non virtual" returnType="QListViewItem *">getItemByIndex( int idx )</function>
+    <function specifier="non virtual">IMListInit( void )</function>
+    <function specifier="non virtual">convert2table( QString sourceFile )</function>
+</functions>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

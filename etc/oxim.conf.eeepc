@@ -1,0 +1,97 @@
+#
+# OXIM config file.
+#
+# By Firefly.
+#
+
+<SystemSetting>
+	DefaultFontName = "AR PL New Sung" # 預設字型名稱
+	DefaultFontSize = "13"
+	PreeditFontSize = "13"
+	SelectFontSize = "13"
+	StatusFontSize = "13"
+	MenuFontSize = "13"
+	SymbolFontSize = "13"
+	XcinFontSize = "13"
+	WinBoxColor = "#737173"
+	BorderColor = "#eeeee6"
+	LightColor = "#ffffff"
+	DarkColor = "#b4b29c"
+	CursorColor = "#7f0000"
+	CursorFontColor = "#ffff00"
+	FontColor = "#000000"
+	ConvertNameColor = "#7f0000"
+	InputNameColor = "#00007f"
+	UnderlineColor = "#000000"
+	KeystrokeColor = "#0000ff"
+	KeystrokeBoxColor = "#ffffff"
+	SelectFontColor = "#ffffff"
+	SelectBoxColor = "#3179ac"
+	MenuBGColor = "#4c59a6"
+	MenuFontColor = "#ffffff"
+	XcinBorderColor = "#ffffff"
+	XcinBGColor = "#0000ff"
+	XcinFontColor = "#ffffff"
+	XcinStatusFGColor = "#00ffff"
+	XcinStatusBGColor = "#000000"
+	XcinCursorFGColor = "#ffff00"
+	XcinCursorBGColor = "#7f0000"
+	XcinUnderlineColor = "#00ffff"
+	MsgboxBGColor = "#eaeaf1"
+	DefauleInputMethod = "chewing" # 預設的輸入法名稱
+	XcinStyleEnabled = "No" # 使用 XCIN 輸入風格
+	OnSpotEnabled = "No" # 開啟 On The Spot 風格
+</SystemSetting>
+
+#-------------------------
+# 通用設定說明
+#
+# SetKey : 設定快速鍵 Ctrl+Alt (0-9)
+# Circular : 是否加入 Ctrl+Shift 輪換
+# AliasName : 輸入法別名
+# AutoCompose = 是否自動顯示組字結果
+# AutoUpChar = 是否自動出字
+# AutoFullUp = 滿字根是否自動出字
+# SpaceAutoUp = 空白鍵自動出字(AutoUpChar = yes 才有作用)
+# SelectKeyShift = 選字鍵後移一位(AutoUpChar = yes 才有作用, 大易三碼有用)
+# SpaceIgnore = 忽略後續空白(AutoFullUp = yes 才有作用) 
+# SpaceReset = 錯誤時, 是否按空白鍵清除
+# WildEnable = 是否啟用 *、? 組字
+# EndKey = 按下結束鍵出字(通常用在注音之類的輸入法)
+# DisableSelectList = 特殊字根, 用來設定在按下某個鍵之後，再按選字鍵時，則此選字鍵便失去了選字功能。此功能是針對行列 30 輸入法的特殊需求而設計。
+#
+#------------------------
+
+#-------------------------
+# 新酷音設定說明
+#
+# SetKey : 設定快速鍵 Ctrl+Alt (0-9)
+# Circular : 是否加入 Ctrl+Shift 輪換
+# AliasName : 輸入法別名
+# KeyMap = 鍵盤對應(0:標準, 1:許氏, 2:IBM, 3:精業, 4:倚天, 5:倚天26鍵, 6:DVORAK, 7:DVORAK 許氏, 8:漢語拼音)
+# SelectionKeys = 選字鍵(0:1234567890, 1:qwertyuiop, 2:asdfghjkl; 3:zxcvbnm,./)
+# CapsLockMode = CapsLock 時, 英文大小寫(0:小寫, 1:大寫)
+#-------------------------
+<InputMethod "chewing">
+	SetKey = 7
+	Circular = Yes
+	KeyMap = "0"
+	SelectionKeys = "0"
+	CapsLockMode = "0"
+</InputMethod>
+
+#
+# Unicode
+#
+<InputMethod "unicode">
+	SetKey = 0
+	Circular = Yes
+</InputMethod>
+
+#
+# 昇陽拼音
+#
+<InputMethod "sunpinyin">
+        Circular = Yes
+        PinyinScheme = "1"
+</InputMethod>

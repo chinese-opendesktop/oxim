@@ -1,0 +1,231 @@
+<!DOCTYPE UI><UI version="3.0" stdsetdef="1">
+<class>GlobolSetting</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>GlobolSetting</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>334</width>
+            <height>175</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>輸入法通用設定</string>
+    </property>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>50</x>
+                <y>50</y>
+                <width>50</width>
+                <height>21</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>別名：</string>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>GlobolOKButton</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>180</x>
+                <y>130</y>
+                <width>61</width>
+                <height>31</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>確定</string>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>GlobolCancelButton</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>260</x>
+                <y>130</y>
+                <width>61</width>
+                <height>31</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>取消</string>
+        </property>
+    </widget>
+    <widget class="QComboBox">
+        <item>
+            <property name="text">
+                <string>1</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>2</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>3</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>4</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>5</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>6</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>7</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>8</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>9</string>
+            </property>
+        </item>
+        <item>
+            <property name="text">
+                <string>0</string>
+            </property>
+        </item>
+        <property name="name">
+            <cstring>HotKey</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>230</x>
+                <y>90</y>
+                <width>60</width>
+                <height>21</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QCheckBox">
+        <property name="name">
+            <cstring>HotKeyBox</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>10</x>
+                <y>90</y>
+                <width>210</width>
+                <height>21</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>使用按鍵組合 Ctrl + Alt +</string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>IMNameLabel</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>100</x>
+                <y>10</y>
+                <width>220</width>
+                <height>21</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+                <bold>1</bold>
+            </font>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel1</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>30</x>
+                <y>10</y>
+                <width>64</width>
+                <height>21</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>輸入法：</string>
+        </property>
+    </widget>
+    <widget class="QLineEdit">
+        <property name="name">
+            <cstring>AliasNameEdit</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>100</x>
+                <y>44</y>
+                <width>221</width>
+                <height>30</height>
+            </rect>
+        </property>
+    </widget>
+</widget>
+<connections>
+    <connection>
+        <sender>GlobolOKButton</sender>
+        <signal>clicked()</signal>
+        <receiver>GlobolSetting</receiver>
+        <slot>accept()</slot>
+    </connection>
+    <connection>
+        <sender>GlobolCancelButton</sender>
+        <signal>clicked()</signal>
+        <receiver>GlobolSetting</receiver>
+        <slot>reject()</slot>
+    </connection>
+    <connection>
+        <sender>HotKeyBox</sender>
+        <signal>stateChanged(int)</signal>
+        <receiver>GlobolSetting</receiver>
+        <slot>HotKeyBox_stateChanged(int)</slot>
+    </connection>
+</connections>
+<tabstops>
+    <tabstop>HotKeyBox</tabstop>
+    <tabstop>HotKey</tabstop>
+    <tabstop>AliasNameEdit</tabstop>
+    <tabstop>GlobolOKButton</tabstop>
+    <tabstop>GlobolCancelButton</tabstop>
+</tabstops>
+<includes>
+    <include location="local" impldecl="in declaration">qlineedit.h</include>
+    <include location="local" impldecl="in declaration">qcheckbox.h</include>
+    <include location="local" impldecl="in declaration">qmessagebox.h</include>
+    <include location="local" impldecl="in implementation">globolsetting.ui.h</include>
+</includes>
+<slots>
+    <slot>HotKeyBox_stateChanged( int state )</slot>
+</slots>
+<pixmapinproject/>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

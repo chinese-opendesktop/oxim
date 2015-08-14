@@ -1,0 +1,309 @@
+<!DOCTYPE UI><UI version="3.0" stdsetdef="1">
+<class>InstallIM</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>InstallIM</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>416</width>
+            <height>356</height>
+        </rect>
+    </property>
+    <property name="paletteBackgroundColor">
+        <color>
+            <red>228</red>
+            <green>229</green>
+            <blue>255</blue>
+        </color>
+    </property>
+    <property name="caption">
+        <string>安裝輸入法</string>
+    </property>
+    <property name="sizeGripEnabled">
+        <bool>true</bool>
+    </property>
+    <widget class="QLayoutWidget">
+        <property name="name">
+            <cstring>Layout5</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>330</x>
+                <y>10</y>
+                <width>82</width>
+                <height>180</height>
+            </rect>
+        </property>
+        <vbox>
+            <property name="name">
+                <cstring>unnamed</cstring>
+            </property>
+            <property name="margin">
+                <number>0</number>
+            </property>
+            <property name="spacing">
+                <number>6</number>
+            </property>
+            <widget class="QPushButton">
+                <property name="name">
+                    <cstring>buttonOk</cstring>
+                </property>
+                <property name="text">
+                    <string>確定(&amp;O)</string>
+                </property>
+                <property name="accel">
+                    <string>Alt+O</string>
+                </property>
+                <property name="autoDefault">
+                    <bool>true</bool>
+                </property>
+                <property name="default">
+                    <bool>true</bool>
+                </property>
+            </widget>
+            <widget class="QPushButton">
+                <property name="name">
+                    <cstring>buttonCancel</cstring>
+                </property>
+                <property name="text">
+                    <string>取消(&amp;C)</string>
+                </property>
+                <property name="accel">
+                    <string>Alt+C</string>
+                </property>
+                <property name="autoDefault">
+                    <bool>true</bool>
+                </property>
+            </widget>
+            <spacer>
+                <property name="name">
+                    <cstring>Spacer1</cstring>
+                </property>
+                <property name="orientation">
+                    <enum>Vertical</enum>
+                </property>
+                <property name="sizeType">
+                    <enum>Expanding</enum>
+                </property>
+                <property name="sizeHint">
+                    <size>
+                        <width>20</width>
+                        <height>20</height>
+                    </size>
+                </property>
+            </spacer>
+        </vbox>
+    </widget>
+    <widget class="QTabWidget">
+        <property name="name">
+            <cstring>installTab</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>10</x>
+                <y>10</y>
+                <width>311</width>
+                <height>340</height>
+            </rect>
+        </property>
+        <widget class="QWidget">
+            <property name="name">
+                <cstring>tab</cstring>
+            </property>
+            <attribute name="title">
+                <string>從本機安裝(&amp;L)</string>
+            </attribute>
+            <widget class="QPushButton">
+                <property name="name">
+                    <cstring>ChoiceFile</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>250</x>
+                        <y>100</y>
+                        <width>51</width>
+                        <height>31</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>瀏覽</string>
+                </property>
+            </widget>
+            <widget class="QLabel">
+                <property name="name">
+                    <cstring>textLabel1</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>10</x>
+                        <y>10</y>
+                        <width>290</width>
+                        <height>50</height>
+                    </rect>
+                </property>
+                <property name="font">
+                    <font>
+                        <pointsize>10</pointsize>
+                    </font>
+                </property>
+                <property name="text">
+                    <string>請輸入檔案完整路徑名稱，或按一下「瀏覽」按鈕選擇；如果是 *.cin 檔案的話，請確定該檔是 UTF-8 編碼。</string>
+                </property>
+                <property name="alignment">
+                    <set>WordBreak|AlignVCenter</set>
+                </property>
+            </widget>
+            <widget class="QLineEdit">
+                <property name="name">
+                    <cstring>FileName</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>10</x>
+                        <y>70</y>
+                        <width>290</width>
+                        <height>24</height>
+                    </rect>
+                </property>
+            </widget>
+        </widget>
+        <widget class="QWidget">
+            <property name="name">
+                <cstring>tab</cstring>
+            </property>
+            <attribute name="title">
+                <string>從網路安裝(&amp;N)</string>
+            </attribute>
+            <widget class="QListView">
+                <property name="name">
+                    <cstring>CINList</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>8</x>
+                        <y>10</y>
+                        <width>291</width>
+                        <height>250</height>
+                    </rect>
+                </property>
+                <property name="font">
+                    <font>
+                        <pointsize>10</pointsize>
+                    </font>
+                </property>
+            </widget>
+            <widget class="QPushButton">
+                <property name="name">
+                    <cstring>ConnectButton</cstring>
+                </property>
+                <property name="enabled">
+                    <bool>false</bool>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>220</x>
+                        <y>270</y>
+                        <width>81</width>
+                        <height>30</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>連線</string>
+                </property>
+            </widget>
+        </widget>
+    </widget>
+</widget>
+<connections>
+    <connection>
+        <sender>buttonOk</sender>
+        <signal>clicked()</signal>
+        <receiver>InstallIM</receiver>
+        <slot>accept()</slot>
+    </connection>
+    <connection>
+        <sender>buttonCancel</sender>
+        <signal>clicked()</signal>
+        <receiver>InstallIM</receiver>
+        <slot>reject()</slot>
+    </connection>
+    <connection>
+        <sender>ChoiceFile</sender>
+        <signal>clicked()</signal>
+        <receiver>InstallIM</receiver>
+        <slot>ChoiceFile_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>ConnectButton</sender>
+        <signal>clicked()</signal>
+        <receiver>InstallIM</receiver>
+        <slot>ConnectButton_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>installTab</sender>
+        <signal>currentChanged(QWidget*)</signal>
+        <receiver>InstallIM</receiver>
+        <slot>installTab_currentChanged(QWidget*)</slot>
+    </connection>
+    <connection>
+        <sender>CINList</sender>
+        <signal>clicked(QListViewItem*)</signal>
+        <receiver>InstallIM</receiver>
+        <slot>CINList_clicked(QListViewItem*)</slot>
+    </connection>
+</connections>
+<includes>
+    <include location="local" impldecl="in declaration">qhttp.h</include>
+    <include location="local" impldecl="in declaration">qfile.h</include>
+    <include location="local" impldecl="in declaration">qmessagebox.h</include>
+    <include location="local" impldecl="in declaration">qmap.h</include>
+    <include location="local" impldecl="in declaration">qlistview.h</include>
+    <include location="local" impldecl="in declaration">qurl.h</include>
+    <include location="local" impldecl="in declaration">qfileinfo.h</include>
+    <include location="local" impldecl="in declaration">qftp.h</include>
+    <include location="local" impldecl="in declaration">qapplication.h</include>
+    <include location="local" impldecl="in declaration">qprogressdialog.h</include>
+    <include location="local" impldecl="in declaration">qfiledialog.h</include>
+    <include location="local" impldecl="in implementation">installim.ui.h</include>
+</includes>
+<variables>
+    <variable access="private">QMap &lt;QListViewItem *, QUrl&gt; MirrorMap;</variable>
+    <variable access="private">int downloadStep;</variable>
+    <variable access="private">QString mirrorsFileName;</variable>
+    <variable access="private">QFtp *ftp;</variable>
+    <variable access="private">QString cinListFileName;</variable>
+    <variable access="private">bool httpRequestAborted;</variable>
+    <variable access="private">int httpGetId;</variable>
+    <variable access="private">QFile *saveFile;</variable>
+    <variable access="private">QHttp *http;</variable>
+    <variable access="private">QUrl mirrorsFileURL;</variable>
+    <variable access="private">QUrl mirrorURL;</variable>
+    <variable access="private">int ftpGetId;</variable>
+    <variable access="public">QMap&lt;QCheckListItem *, QString&gt; CheckMap;</variable>
+</variables>
+<slots>
+    <slot specifier="non virtual">ChoiceFile_clicked()</slot>
+    <slot specifier="non virtual">ConnectButton_clicked()</slot>
+    <slot specifier="non virtual">httpRequestFinished( int requestId, bool error )</slot>
+    <slot specifier="non virtual">readResponseHeader( const QHttpResponseHeader &amp; responseHeader )</slot>
+    <slot specifier="non virtual">MakeListView()</slot>
+    <slot specifier="non virtual">accept()</slot>
+    <slot specifier="non virtual">ftp_commandStarted( int id )</slot>
+    <slot specifier="non virtual">ftp_commandFinished( int id, bool error )</slot>
+    <slot specifier="non virtual">ftp_done( bool error )</slot>
+    <slot specifier="non virtual">ftp_stateChanged( int state )</slot>
+    <slot specifier="non virtual">installTab_currentChanged( QWidget * tab )</slot>
+    <slot>CINList_clicked( QListViewItem * item )</slot>
+    <slot>ftp_dataTransferProgress( int bytes, int total )</slot>
+</slots>
+<functions>
+    <function access="private" specifier="non virtual">init()</function>
+    <function specifier="non virtual" returnType="bool">downloadFile( QUrl URL, QString saveFileName )</function>
+    <function access="private" specifier="non virtual">MakeMirrorList()</function>
+</functions>
+<pixmapinproject/>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

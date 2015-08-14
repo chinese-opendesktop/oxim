@@ -1,0 +1,11 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+moduledir=${exec_prefix}/lib/oxim/modules
+
+Name: oxim
+Description: 
+Version: 1.5.4
+Libs: -L${libdir} -loxim
+Cflags: -I${includedir}/oxim

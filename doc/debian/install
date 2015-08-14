@@ -1,0 +1,2 @@
+#debian/im-switch/oxim etc/X11/xinit/xinput.d
+#debian/oxim/usr/lib/oxim/immodules/gtk-im-oxim.so usr/lib/gtk-2.0/immodules

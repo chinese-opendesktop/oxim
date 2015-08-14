@@ -1,0 +1,6 @@
+XIM=oxim
+XIM_PROGRAM=/usr/bin/oxim
+XIM_ARGS=
+GTK_IM_MODULE=oxim
+QT_IM_MODULE=xim
+DEPENDS=

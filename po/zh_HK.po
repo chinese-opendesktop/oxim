@@ -1,0 +1,694 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: oxim 1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-09-26 17:22+0800\n"
+"PO-Revision-Date: 2008-09-26 16:04+0800\n"
+"Last-Translator: wind <yc.yan@ossii.com.tw>\n"
+"Language-Team: ossii <ossii@ossii.com.tw>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/xim/xim.c:165
+#, c-format
+msgid "File: '%s' Not exist.\n"
+msgstr "檔案不存在: '%s' 。\n"
+
+#: src/xim/xim.c:537
+#, c-format
+msgid "query->%s\n"
+msgstr "查->%s\n"
+
+#: src/xim/xim.c:1318
+#, c-format
+msgid "IMOpenIM() with name \"%s\" transport \"%s\" failed.\n"
+msgstr "IMOpenIM() 從 \"%s\" 傳輸到 \"%s\" 失敗\n"
+
+#: src/xim/xim.c:1324
+#, c-format
+msgid "XIM server \"%s\" transport \"%s\"\n"
+msgstr "XIM server 從 \"%s\" 傳輸到 \"%s\" \n"
+
+#: src/xim/gui.c:490
+#, c-format
+msgid "cannot open display: %s\n"
+msgstr "無法開啟顯示介面：%s\n"
+
+#: src/xim/gui.c:496
+msgid "OXIM already running!\n"
+msgstr "OXIM已經啟動了！\n"
+
+#: src/xim/xim_IC.c:303
+#, c-format
+msgid "ic_get: unknown IC attr: %s\n"
+msgstr "ic_get: 未知的 IC attr: %s\n"
+
+#: src/xim/xim_IC.c:342
+#, c-format
+msgid "ic_get: unknown IC pre_attr: %s\n"
+msgstr "ic_get: 未知的 IC pre_attr: %s\n"
+
+#: src/xim/xim_IC.c:378
+#, c-format
+msgid "ic_get: unknown IC sts_attr: %s\n"
+msgstr "ic_get: 未知的 IC sts_attr: %s\n"
+
+#: src/xim/xim_IC.c:446
+#, c-format
+msgid "client input style not enabled(%x), set to \"Root\".\n"
+msgstr "使用者端輸入形式尚未開啟(%x), 先設給 \"Root\".\n"
+
+#: src/xim/xim_IC.c:466
+#, c-format
+msgid "ic_set: unknown IC attr: %s\n"
+msgstr "ic_set: 未知的 IC attr: %s\n"
+
+#: src/xim/xim_IC.c:529
+#, c-format
+msgid "ic_set: unknown IC pre_attr: %s\n"
+msgstr "ic_set: 未知的 IC pre_attr: %s\n"
+
+#: src/xim/xim_IC.c:561
+#, c-format
+msgid "ic_set: unknown IC sts_attr: %s\n"
+msgstr "ic_set: 未知的 IC sts_attr: %s\n"
+
+#: src/xim/gui_preedit.c:123
+msgid "Selected words"
+msgstr "候選詞"
+
+#: src/xim/gui_preedit.c:124
+msgid "Selected word"
+msgstr "候選字"
+
+#: src/xim/gui_symbol.c:402
+#, c-format
+msgid "Read 'symbol.list' error!!\n"
+msgstr "讀取'符號表'失敗！！\n"
+
+#: src/xim/fkey.c:236
+#, c-format
+msgid "set_funckey: %d: unknown key_type\n"
+msgstr "set_funckey: %d: 未知的 key_type\n"
+
+#: src/xim/fkey.c:240
+#, c-format
+msgid "%s: %s: too many keys, ignore.\n"
+msgstr "%s: %s: 輸入太多鍵, 忽略.\n"
+
+#: src/xim/fkey.c:251
+#, c-format
+msgid "%s: %s: not valid modifier key.\n"
+msgstr "%s: %s: 並不是可修改的鍵.\n"
+
+#: src/xim/fkey.c:259
+#, c-format
+msgid "%s: %s: not valid key name.\n"
+msgstr "%s: %s: 不是正確的鍵名.\n"
+
+#: src/xim/fkey.c:264 src/xim/fkey.c:268
+#, c-format
+msgid "%s: %s: duplicate keys.\n"
+msgstr "%s: %s: 重複的鍵.\n"
+
+#: src/xim/fkey.c:293
+#, c-format
+msgid "%s and %s have the same key-definition.\n"
+msgstr "%s and %s 同樣的鍵定義.\n"
+
+#: src/xim/gui_menu.c:371
+msgid "Han-S Output"
+msgstr "簡體輸出"
+
+#: src/xim/gui_menu.c:372
+msgid "Han-T Output"
+msgstr "繁體輸出"
+
+#: src/xim/gui_menu.c:373
+msgid "Mode Toggle"
+msgstr "輸入模式切換"
+
+#: src/xim/gui_menu.c:377
+msgid "Style Toggle"
+msgstr "輸入風格切換"
+
+#: src/xim/gui_menu.c:383
+msgid "Symbol List"
+msgstr "符號輸入表"
+
+#: src/xim/gui_menu.c:384
+msgid "Keyboard"
+msgstr "螢幕小鍵盤"
+
+#: src/xim/gui_menu.c:386
+msgid "Setting..."
+msgstr "設定…"
+
+#: src/xim/gui_keyboard.c:192
+#, c-format
+msgid "Unknown tag : '%s'\n"
+msgstr "未知的tag： '%s'\n"
+
+#: src/xim/gui_keyboard.c:259
+#, c-format
+msgid "%s line %d invalid !\n"
+msgstr "%s %d 列不正確 !\n"
+
+#: src/xim/gui_keyboard.c:319
+#, c-format
+msgid "Read keyboard setting error!!\n"
+msgstr "讀取鍵盤設定錯誤！！\n"
+
+#: src/xim/gui_tray.c:93
+msgid "OXIM Method"
+msgstr "OXIM 輸入法"
+
+#: src/xim/gui_xcin.c:219
+msgid "S"
+msgstr "簡"
+
+#: src/xim/gui_xcin.c:221
+msgid "T"
+msgstr "繁"
+
+#: src/xim/gui_xcin.c:223
+msgid "F"
+msgstr "全"
+
+#: src/xim/gui_xcin.c:223
+msgid "H"
+msgstr "半"
+
+#: src/xim/gui_xcin.c:234 src/xim/gui_status.c:81
+msgid "No Name"
+msgstr "未命名"
+
+#: src/xim/gui_xcin.c:239 src/xim/gui_status.c:85
+msgid "En"
+msgstr "英數"
+
+#: src/xim/gui_xcin.c:341
+msgid "Yes"
+msgstr "是"
+
+#: src/xim/gui_xcin.c:346
+msgid "No"
+msgstr "否"
+
+#: src/xim/oxim_main.c:63
+#, c-format
+msgid "X locale \"%s\" is not supported by your system.\n"
+msgstr "您的系統不支援 X locale ：\"%s\"\n"
+
+#: src/xim/oxim_main.c:71
+#, c-format
+msgid ""
+"OXIM (Open X Input Method) version %s.\n"
+"(module ver: %s).\n"
+msgstr ""
+"OXIM (Open X Input Method) 版本 %s.\n"
+"(模組版本: %s).\n"
+
+#: src/xim/oxim_main.c:76
+msgid ""
+"\n"
+"Usage:  oxim [-h] [-d DISPLAY] [-x XIM_name] [-v n]\n"
+"Options:  -h: print this message.\n"
+"          -d: set X Display.\n"
+"          -x: register XIM server name to Xlib.\n"
+"          -v: set debug level to n.\n"
+"\n"
+msgstr ""
+"\n"
+"用法:  oxim [-h] [-d DISPLAY] [-x XIM_name] [-v n]\n"
+"選項:  -h: 印出本說明訊息.\n"
+"          -d: 設定 X 顯示埠號.\n"
+"          -x: 登錄 XIM server 名稱到 Xlib.\n"
+"          -v: 設定偵錯等級 n.\n"
+"\n"
+
+#: src/xim/oxim_main.c:118 src/util/oxim-conv/oxim-conv.c:246
+#: src/util/oxim2tab/oxim2tab.c:246
+#, c-format
+msgid "unknown option  -%c.\n"
+msgstr "未知的選項 -%c.\n"
+
+#: src/xim/oxim_main.c:127
+#, c-format
+msgid ""
+"OXIM (Open X Input Method) version %s.\n"
+"(use \"-h\" option for help)\n"
+msgstr ""
+"OXIM (Open X Input Method) 版本 %s.\n"
+"(加上 \"-h\" 參數顯示說明)\n"
+
+#: src/xim/oxim_main.c:130
+#, c-format
+msgid "locale \"%s\"\n"
+msgstr "語系 \"%s\"\n"
+
+#: src/util/oxim-conv/gencin.c:57 src/util/oxim-conv/gencin.c:70
+#: src/util/oxim-conv/gencin.c:83 src/util/oxim-conv/gencin.c:108
+#: src/util/oxim-conv/gencin.c:142 src/util/oxim-conv/gencin.c:182
+#: src/util/oxim-conv/gencin.c:370 src/util/oxim2tab/gencin.c:54
+#: src/util/oxim2tab/gencin.c:64 src/util/oxim2tab/gencin.c:74
+#: src/util/oxim2tab/gencin.c:105 src/util/oxim2tab/gencin.c:143
+#: src/util/oxim2tab/gencin.c:264
+#, c-format
+msgid "%s(%d): arguement expected.\n"
+msgstr "%s(%d): 參數錯誤.\n"
+
+#: src/util/oxim-conv/gencin.c:117 src/util/oxim2tab/gencin.c:80
+#, c-format
+msgid "%s(%d): too many selection keys defined.\n"
+msgstr "%s(%d): 定義太多組合鍵了\n"
+
+#: src/util/oxim-conv/gencin.c:161 src/util/oxim2tab/gencin.c:123
+#, c-format
+msgid ""
+"SCIM table \"%s\" line %d: too many selection keys defined. Use default "
+"selection keys \"%s\".\n"
+msgstr ""
+"SCIM 表格 \"%s\" %d列: 定義了太多組合鍵. 設定成使用預設 的組合鍵 \"%s\".\n"
+
+#: src/util/oxim-conv/gencin.c:190 src/util/oxim2tab/gencin.c:147
+#, c-format
+msgid "%s(%d): too many end keys defined.\n"
+msgstr "%s(%d): 定義太多結束鍵了.\n"
+
+#: src/util/oxim-conv/gencin.c:235
+#, c-format
+msgid "%s(%d): setting->'%s %s' is already defined, overwrite it.\n"
+msgstr "%s(%d): 設定->'%s %s' 已經定義過, 覆蓋掉此設定.\n"
+
+#: src/util/oxim-conv/gencin.c:275 src/util/oxim-conv/gencin.c:396
+#: src/util/oxim2tab/gencin.c:179 src/util/oxim2tab/gencin.c:289
+#, c-format
+msgid "%s(%d): illegal key \"%c\" specified.\n"
+msgstr "%s(%d): 選到錯誤的鍵 \"%c\"。\n"
+
+#: src/util/oxim-conv/gencin.c:287
+#, c-format
+msgid "%s(%d): key \"%c\" is already in used, overwrite it.\n"
+msgstr "%s(%d): 該鍵 \"%c\" 已經用過了, 覆蓋掉此設定。\n"
+
+#: src/util/oxim-conv/gencin.c:540 src/util/oxim2tab/gencin.c:451
+#, c-format
+msgid "%s(%d): unknown command: %s, ignore.\n"
+msgstr "%s(%d): 忽略了未知的命令: %s。\n"
+
+#: src/util/oxim-conv/gencin.c:639
+#, c-format
+msgid "number of locale: %d\n"
+msgstr "有 %d 個語系\n"
+
+#: src/util/oxim-conv/gencin.c:641
+#, c-format
+msgid "number of settings: %d\n"
+msgstr "有 %d 個設定\n"
+
+#: src/util/oxim-conv/gencin.c:643 src/util/oxim2tab/gencin.c:460
+#, c-format
+msgid "number of keyname: %d\n"
+msgstr "有 %d 個keyname\n"
+
+#: src/util/oxim-conv/gencin.c:645 src/util/oxim2tab/gencin.c:462
+#, c-format
+msgid "max length of keystroke: %d\n"
+msgstr "最大長度的keystroke: %d\n"
+
+#: src/util/oxim-conv/gencin.c:647 src/util/oxim2tab/gencin.c:464
+#, c-format
+msgid "number of keystroke code defined: %d\n"
+msgstr "number of keystroke code defined: %d\n"
+
+#: src/util/oxim-conv/gencin.c:649 src/util/oxim2tab/gencin.c:466
+#, c-format
+msgid "number of char defined: %d\n"
+msgstr "定義了 %d 個字元\n"
+
+#: src/util/oxim-conv/gencin.c:651
+#, c-format
+msgid "number of phrase define: %d\n"
+msgstr "定義了 %d 個片語\n"
+
+#: src/util/oxim-conv/oxim-conv.c:156 src/util/oxim2tab/oxim2tab.c:156
+#, c-format
+msgid "Can not write to file '%s'.\n"
+msgstr "無法寫入檔案： '%s'。\n"
+
+#: src/util/oxim-conv/oxim-conv.c:161 src/util/oxim2tab/oxim2tab.c:161
+#, c-format
+msgid "cin file: %s, version %s.\n"
+msgstr "cin 檔案: %s, 版本 %s.\n"
+
+#: src/util/oxim-conv/oxim-conv.c:191 src/util/oxim2tab/oxim2tab.c:191
+#, c-format
+msgid ""
+"OXIM convert table tool. Version (oxim %s)\n"
+"Usage: %s <-c new cin file> <.cin file|.txt.in(SCIM table source)>\n"
+"\n"
+msgstr ""
+"OXIM 表格轉換工具. 版本 (oxim %s)\n"
+"用法: %s <-c 新的 cin 檔案> <.cin file|.txt.in(SCIM 表格檔)>\n"
+"\n"
+
+#: src/util/oxim-conv/oxim-conv.c:197 src/util/oxim2tab/oxim2tab.c:197
+#, c-format
+msgid ""
+"OXIM convert table tool. Version (oxim %s)\n"
+"Usage: %s [-o output] <.cin file|.txt.in(SCIM table source)>"
+"\n"
+"\n"
+msgstr ""
+"OXIM 表格轉換工具. 版本 (oxim %s)\n"
+"用法: %s [-o output] <.cin file|.txt.in(SCIM 表格檔)>\n"
+"\n"
+
+#: src/util/oxim-conv/oxim-conv.c:252 src/util/oxim2tab/oxim2tab.c:252
+#, c-format
+msgid "OXIM convert table tool. Version (oxim %s)\n"
+msgstr "OXIM 表格轉換工具. 版本 (oxim %s)\n"
+
+#: src/util/oxim-conv/oxim-conv.c:255 src/util/oxim2tab/oxim2tab.c:255
+msgid "no cin file specified.\n"
+msgstr "沒選取cin檔案\n"
+
+#: src/util/oxim2tab/gencin.c:184
+#, c-format
+msgid "%s(%d): key \"%c\" is already in used.overwrite it.\n"
+msgstr "%s(%d): key \"%c\" 已經設定過。覆蓋原先設定。\n"
+
+#: src/util/oxim2tab/gencin.c:456
+#, c-format
+msgid "%s: command \"%s\" not specified.\n"
+msgstr "%s: 命令 \"%s\" 還沒選取。\n"
+
+#: src/util/oxim2tab/gencin.c:468
+#, c-format
+msgid "number of word: %d\n"
+msgstr "字數 %d\n"
+
+#: src/util/oxim2tab/gencin.c:470
+#, c-format
+msgid "memory model: %d\n"
+msgstr "記憶體模式: %d\n"
+
+#: src/ogim/ogimcontext.c:123
+msgid ""
+"assemble\n"
+"word"
+msgstr ""
+"組\n"
+"字"
+
+#: src/ogim/ogim.c:15
+msgid "OXIM Input Method System"
+msgstr "OXIM 輸入法系統"
+
+#: src/modules/unicode/unicode.c:220
+msgid "This is the Unicode input method module.\n"
+msgstr "這是萬國碼輸入法模組.\n"
+
+#: src/modules/unicode/unicode.c:225
+msgid "Unicode"
+msgstr "萬國碼"
+
+#: src/modules/gen-inp-v1/gen-inp-v1.c:52 src/modules/gen-inp/gen-inp.c:53
+#, c-format
+msgid "gen_inp: %s: invalid tab file.\n"
+msgstr "gen_inp: %s: 不正確的tab檔案。\n"
+
+#: src/modules/gen-inp-v1/gen-inp-v1.c:60 src/modules/gen-inp/gen-inp.c:60
+#: src/modules/gen-inp/gen-inp.c:108
+#, c-format
+msgid "gen_inp: %s: reading error.\n"
+msgstr "gen_inp: %s: 讀取錯誤。\n"
+
+#: src/modules/gen-inp-v1/gen-inp-v1.c:67
+#, c-format
+msgid "gen_inp: %s: checksum error.\n"
+msgstr "gen_inp: %s: 檢查碼錯誤。\n"
+
+#: src/modules/gen-inp-v1/gen-inp-v1.c:265
+#, c-format
+msgid "gen_inp: %s: reading offset table error.\n"
+msgstr "gen_inp: %s: 讀取表格偏移量錯誤。\n"
+
+#: src/modules/gen-inp-v1/gen-inp-v1.c:1554
+msgid "This is the general input method module.\n"
+msgstr "這是一般的輸入法模組。\n"
+
+#: src/modules/gen-inp/gen-inp.c:64
+#, c-format
+msgid "gen_inp: %s: invalid version.\n"
+msgstr "gen_inp: %s: 錯誤的版本。\n"
+
+#: src/modules/gen-inp/gen-inp.c:1446
+msgid ""
+"This is the general input method module. It is the most generic\n"
+"module which can read the IM table (\".tab\" file) and perform\n"
+"the correct operations of the specific IM. It also can accept a\n"
+"lot of options from the \"oximrc\" file to detailly control the\n"
+"behavior of the IM. We hope that this module could match most of\n"
+"your Chinese input requirements.\n"
+"\n"
+"This module is free software, as part of oxim system.\n"
+msgstr ""
+"這是一般性的輸入法模組。它是最通用的模組，\n"
+"可以讀取IM表格檔(\".tab\"檔)並接收正確的輸入訊息\n"
+"給輸入法。 它也能接受\"oximrc\"檔案中的設定值以控制\n"
+"輸入法。\n"
+"我們希望這個模組可合乎您輸入中文的需求。\n"
+"\n"
+"這個模組是免費軟體，它是OXIM的一部分.\n"
+
+#: src/modules/chewing/chewing2.c:547 src/modules/chewing/chewing.c:526
+msgid ""
+"Chewing : a smart phonetic input method module for OXIM.\n"
+"By Lu-chuan Kung <lckung@iis.sinica.edu.tw>,\n"
+"Kang-pen Chen <kpchen@iis.sinica.edu.tw>, and others.\n"
+msgstr ""
+"詞音：一個智慧型的OXIM詞庫輸入模組\n"
+"作者有 Lu-chuan Kung <lckung@iis.sinica.edu.tw>,\n"
+"Kang-pen Chen <kpchen@iis.sinica.edu.tw>, 以及其他人.\n"
+
+#: src/lib/oxim_module.c:98
+#, c-format
+msgid "dlerror: %s\n"
+msgstr "dlerror: %s\n"
+
+#: src/lib/oxim_module.c:111
+msgid "module symbol \"module_ptr\" not found.\n"
+msgstr "未發現 \"module_ptr\" 模組符號。\n"
+
+#: src/lib/oxim_module.c:116
+#, c-format
+msgid "invalid module type, type %d required.\n"
+msgstr "錯誤的模組類別, 需要 %d 類別。\n"
+
+#: src/lib/oxim_module.c:121
+#, c-format
+msgid "invalid module version: %s, version %s required.\n"
+msgstr "錯誤的模組版本: %s, 需要 %s 版本.\n"
+
+#: src/lib/oxim_module.c:127
+#, c-format
+msgid "cannot load module \"%s\", ignore.\n"
+msgstr "無法載入模組 \"%s\", 忽略掉了。\n"
+
+#: src/lib/oxim_module.c:184
+#, c-format
+msgid "module \"%s\":"
+msgstr "模組 \"%s\"："
+
+#: src/lib/oxim_module.c:188
+msgid "no comments available.\n"
+msgstr "沒有註解。\n"
+
+#: src/lib/oxim_module.c:223
+#, c-format
+msgid "undefined symbol \"%s\" in module \"%s\", ignore.\n"
+msgstr "未定義的符號 \"%s\" 於模組 \"%s\", 已忽略。\n"
+
+#: src/lib/oxim_module.c:246
+#, c-format
+msgid "invalid objname \"%s\" for module \"%s\", ignore.\n"
+msgstr "錯誤的 objname \"%s\" 於模組 \"%s\", 已忽略。\n"
+
+#: src/lib/oxim_module.c:297
+#, c-format
+msgid "cannot load IM: %s, ignore.\n"
+msgstr "無法載入輸入法： %s, 已忽略。\n"
+
+#: src/lib/oxim_module.c:673
+#, c-format
+msgid "Scan dir: \"%s\" No any files!\n"
+msgstr "掃描目錄： \"%s\" 沒有任何檔案！\n"
+
+#: src/lib/oxim_module.c:722
+#, c-format
+msgid "Can not change dir to \"%s\"\n"
+msgstr "無法切換至目錄： \"%s\"\n"
+
+#: src/lib/oxim_settings.c:406
+#, c-format
+msgid "'%s' not found.\n"
+msgstr "'%s' 未發現。\n"
+
+#: src/lib/oxim_set_locale.c:58
+#, c-format
+msgid "C locale \"%s\" is not supported by your system.\n"
+msgstr "C 的語系表示 \"%s\" 在您的系統中並不支援\n"
+
+#: src/lib/oxim_perr.c:45
+#, c-format
+msgid "%s: warning: "
+msgstr "%s: 警告： "
+
+#: src/lib/oxim_perr.c:48
+#, c-format
+msgid "%s internal: warning: "
+msgstr "%s internal: 警告： "
+
+#: src/lib/oxim_perr.c:51
+#, c-format
+msgid "%s: error: "
+msgstr "%s: 錯誤： "
+
+#: src/lib/oxim_perr.c:55
+#, c-format
+msgid "%s internal: error: "
+msgstr "%s internal: 錯誤: "
+
+#: src/lib/oxim_malloc.c:27
+msgid "oxim_malloc: memory exhaust.\n"
+msgstr "oxim_malloc: memory 錯誤.\n"
+
+#: src/lib/oxim_malloc.c:39
+msgid "oxim_realloc: memory exhaust.\n"
+msgstr "oxim_realloc: memory 錯誤.\n"
+
+#: src/lib/oxim_open_file.c:28
+#, c-format
+msgid "cannot open file:  %s , errno=%d.\n"
+msgstr "無法開啟檔案:  %s , errno=%d.\n"
+
+#: src/gtk-immodule/gtkimcontextoxim.c:283
+msgid "IM Preedit style"
+msgstr "輸入法 Preedit 樣式"
+
+#: src/gtk-immodule/gtkimcontextoxim.c:284
+msgid "How to draw the input method preedit string"
+msgstr "如何繪製輸入法的preedit樣式"
+
+#: src/gtk-immodule/gtkimcontextoxim.c:292
+msgid "IM Status style"
+msgstr "輸入法狀態條"
+
+#: src/gtk-immodule/gtkimcontextoxim.c:293
+msgid "How to draw the input method statusbar"
+msgstr "如何繪製輸入法狀態條"
+
+#: src/gtk-immodule/im-oxim.c:27
+msgid "Open X Input Method"
+msgstr "開放輸入法"
+
+msgid "L+R Shift"
+msgstr "左+右Shift"
+
+msgid "Chewing"
+msgstr "新酷音"
+
+msgid "Punctuator+Marker"
+msgstr "標點與標記"
+
+msgid "Letterlike+Math"
+msgstr "類字母與數學"
+
+msgid "Bopomofo"
+msgstr "注音符號"
+
+msgid "Number"
+msgstr "數字符號"
+
+msgid "Table+Block"
+msgstr "表格與區塊"
+
+msgid "YijingHexagram"
+msgstr "易經符號"
+
+msgid "Greek"
+msgstr "希臘字母"
+
+msgid "Russian"
+msgstr "俄文字母"
+
+msgid "Hiragana"
+msgstr "日文平假名"
+
+msgid "Katakana"
+msgstr "日文片假名"
+
+msgid "Open X Input Method Mini Keyboard"
+msgstr "Open X Input Method 螢幕小鍵盤"
+
+msgid ""
+"\n"
+"Usage:  oxim-agent [-h] [-r] [-i] [-I] [-m] [-s] [-k] [-e symbol|keyboard|tegaki] [-x]\n"
+"Options:  -h: print this message.\n"
+"          -r: reload oxim.\n"
+"          -i: external input string.\n"
+"          -I: external input string (pass through filter).\n"
+"          -m: model window string.\n"
+"          -s: selection candidate strings.\n"
+"          -k: simulate keyboard string.\n"
+"          -e: show symbol/keyboard/tegaki window.\n"
+"          -x: tell oxim to reload screen's width and height.\n"
+"\n"
+msgstr ""
+"\n"
+"用法:  oxim-agent [-h] [-r] [-i] [-I] [-m] [-s] [-k] [-e symbol|keyboard|tegaki] [-x]\n"
+"選項:  -h: 印出本說明訊息.\n"
+"          -r: 重新載入 oxim.\n"
+"          -i: 外部輸入字串.\n"
+"          -I: 外部輸入字串（過濾處理）.\n"
+"          -m: 訊息列字串.\n"
+"          -s: 選擇候選字串.\n"
+"          -k: 鍵盤模擬字串.\n"
+"          -e: 顯示 符號表（symbol）、小鍵盤（keyboard）、手寫輸入（tegaki）視窗.\n"
+"          -x: oxim 重新載入螢幕長寬.\n"
+"\n"
+
+msgid "HWR Input"
+msgstr "手寫辨識輸入"
+
+msgid "Rule Switch"
+msgstr "輸入法輪換"
+
+msgid "L Ctrl Shift"
+msgstr "左Ctrl Shift"
+
+msgid "Width Toggle"
+msgstr "全形半形切換"
+
+msgid "Output Filter Switch"
+msgstr "輸出過濾輪換"
+
+msgid "Sunpinyin"
+msgstr "昇陽拼音"
+
+msgid "IqqiChi"
+msgstr "IQQI注音"
+
+msgid "IqqiHi"
+msgstr "IQQI拼音"
+
+msgid "IqqiEn"
+msgstr "IQQI英文"

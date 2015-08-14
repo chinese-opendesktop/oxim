@@ -1,0 +1,37 @@
+#!/bin/sh
+# postinst script for oxim
+
+set -e
+
+ua_inst () {
+        update-alternatives \
+        --install /etc/X11/xinit/xinput.d/$1 xinput-$1 \
+        /etc/X11/xinit/xinput.d/$2 $3 ;
+}
+
+case "$1" in
+    configure)
+        # Set up default
+        ua_inst all_ALL oxim  99
+        ua_inst zh_CN   oxim  99
+        ua_inst zh_TW   oxim  99
+        ua_inst zh_HK   oxim  99
+        ua_inst zh_SG   oxim  99
+        ua_inst ja_JP   oxim  99
+        ua_inst ko_KR   oxim  99
+        ua_inst th_TH   oxim  99
+    ;;
+
+    abort-upgrade|abort-remove|abort-deconfigure)
+
+    ;;
+
+    *)
+        echo "postinst called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac
+
+#DEBHELPER#
+
+exit 0

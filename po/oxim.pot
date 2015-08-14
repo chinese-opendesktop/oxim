@@ -1,0 +1,573 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-12-23 11:15+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/xim/xim.c:165
+#, c-format
+msgid "File: '%s' Not exist.\n"
+msgstr ""
+
+#: src/xim/xim.c:536
+#, c-format
+msgid "query->%s\n"
+msgstr ""
+
+#: src/xim/xim.c:1318
+#, c-format
+msgid "IMOpenIM() with name \"%s\" transport \"%s\" failed.\n"
+msgstr ""
+
+#: src/xim/xim.c:1324
+#, c-format
+msgid "XIM server \"%s\" transport \"%s\"\n"
+msgstr ""
+
+#: src/xim/gui.c:490 src/xim/oxim_main.c:128
+#, c-format
+msgid "cannot open display: %s\n"
+msgstr ""
+
+#: src/xim/gui.c:496
+msgid "OXIM already running!\n"
+msgstr ""
+
+#: src/xim/xim_IC.c:303
+#, c-format
+msgid "ic_get: unknown IC attr: %s\n"
+msgstr ""
+
+#: src/xim/xim_IC.c:342
+#, c-format
+msgid "ic_get: unknown IC pre_attr: %s\n"
+msgstr ""
+
+#: src/xim/xim_IC.c:378
+#, c-format
+msgid "ic_get: unknown IC sts_attr: %s\n"
+msgstr ""
+
+#: src/xim/xim_IC.c:446
+#, c-format
+msgid "client input style not enabled(%x), set to \"Root\".\n"
+msgstr ""
+
+#: src/xim/xim_IC.c:466
+#, c-format
+msgid "ic_set: unknown IC attr: %s\n"
+msgstr ""
+
+#: src/xim/xim_IC.c:529
+#, c-format
+msgid "ic_set: unknown IC pre_attr: %s\n"
+msgstr ""
+
+#: src/xim/xim_IC.c:561
+#, c-format
+msgid "ic_set: unknown IC sts_attr: %s\n"
+msgstr ""
+
+#: src/xim/gui_preedit.c:123
+msgid "Selected words"
+msgstr ""
+
+#: src/xim/gui_preedit.c:124
+msgid "Selected ord"
+msgstr ""
+
+#: src/xim/gui_symbol.c:402
+#, c-format
+msgid "Read 'symbol.list' error!!\n"
+msgstr ""
+
+#: src/xim/fkey.c:236
+#, c-format
+msgid "set_funckey: %d: unknown key_type\n"
+msgstr ""
+
+#: src/xim/fkey.c:240
+#, c-format
+msgid "%s: %s: too many keys, ignore.\n"
+msgstr ""
+
+#: src/xim/fkey.c:251
+#, c-format
+msgid "%s: %s: not valid modifier key.\n"
+msgstr ""
+
+#: src/xim/fkey.c:259
+#, c-format
+msgid "%s: %s: not valid key name.\n"
+msgstr ""
+
+#: src/xim/fkey.c:264 src/xim/fkey.c:268
+#, c-format
+msgid "%s: %s: duplicate keys.\n"
+msgstr ""
+
+#: src/xim/fkey.c:293
+#, c-format
+msgid "%s and %s have the same key-definition.\n"
+msgstr ""
+
+#: src/xim/gui_menu.c:385
+msgid "Sinm. Output"
+msgstr ""
+
+#: src/xim/gui_menu.c:386
+msgid "Tra. Output"
+msgstr ""
+
+#: src/xim/gui_menu.c:387
+msgid "Mode Switch"
+msgstr ""
+
+#: src/xim/gui_menu.c:391
+msgid "OXIM Input Style"
+msgstr ""
+
+#: src/xim/gui_menu.c:391 src/xim/gui_menu.c:395
+msgid "L+R Shift"
+msgstr ""
+
+#: src/xim/gui_menu.c:395
+msgid "XCIN Input Style"
+msgstr ""
+
+#: src/xim/gui_menu.c:397
+msgid "Symbol List"
+msgstr ""
+
+#: src/xim/gui_menu.c:398
+msgid "Keyboard"
+msgstr ""
+
+#: src/xim/gui_menu.c:402
+msgid "Setting"
+msgstr ""
+
+#: src/xim/gui_keyboard.c:192
+#, c-format
+msgid "Unknown tag : '%s'\n"
+msgstr ""
+
+#: src/xim/gui_keyboard.c:259
+#, c-format
+msgid "%s line %d invalid !\n"
+msgstr ""
+
+#: src/xim/gui_keyboard.c:319
+#, c-format
+msgid "Read keyboard setting error!!\n"
+msgstr ""
+
+#: src/xim/gui_keyboard.c:378
+msgid "Open X Input Method 螢幕輸入小鍵盤"
+msgstr ""
+
+#: src/xim/gui_tray.c:93
+msgid "OXIM Method"
+msgstr ""
+
+#: src/xim/gui_xcin.c:219
+msgid "S"
+msgstr ""
+
+#: src/xim/gui_xcin.c:221
+msgid "T"
+msgstr ""
+
+#: src/xim/gui_xcin.c:223
+msgid "F"
+msgstr ""
+
+#: src/xim/gui_xcin.c:223
+msgid "H"
+msgstr ""
+
+#: src/xim/gui_xcin.c:234 src/xim/gui_status.c:81
+msgid "No Name"
+msgstr ""
+
+#: src/xim/gui_xcin.c:239 src/xim/gui_status.c:85
+msgid "En"
+msgstr ""
+
+#: src/xim/oxim_main.c:67
+#, c-format
+msgid "X locale \"%s\" is not supported by your system.\n"
+msgstr ""
+
+#: src/xim/oxim_main.c:75
+#, c-format
+msgid ""
+"OXIM (Open X Input Method) version %s.\n"
+"(module ver: %s).\n"
+msgstr ""
+
+#: src/xim/oxim_main.c:80
+msgid ""
+"\n"
+"Usage:  oxim [-h] [-d DISPLAY] [-x XIM_name] [-v n] [-r]\n"
+"Options:  -h: print this message.\n"
+"          -d: set X Display.\n"
+"          -x: register XIM server name to Xlib.\n"
+"          -v: set debug level to n.\n"
+"          -r: reload oxim.\n"
+"\n"
+msgstr ""
+
+#: src/xim/oxim_main.c:147 src/util/oxim-conv/oxim-conv.c:246
+#: src/util/oxim2tab/oxim2tab.c:246
+#, c-format
+msgid "unknown option  -%c.\n"
+msgstr ""
+
+#: src/xim/oxim_main.c:156
+#, c-format
+msgid ""
+"OXIM (Open X Input Method) version %s.\n"
+"(use \"-h\" option for help)\n"
+msgstr ""
+
+#: src/xim/oxim_main.c:159
+#, c-format
+msgid "locale \"%s\"\n"
+msgstr ""
+
+#: src/util/oxim-conv/gencin.c:57 src/util/oxim-conv/gencin.c:70
+#: src/util/oxim-conv/gencin.c:83 src/util/oxim-conv/gencin.c:96
+#: src/util/oxim-conv/gencin.c:121 src/util/oxim-conv/gencin.c:155
+#: src/util/oxim-conv/gencin.c:195 src/util/oxim-conv/gencin.c:383
+#: src/util/oxim2tab/gencin.c:54 src/util/oxim2tab/gencin.c:64
+#: src/util/oxim2tab/gencin.c:74 src/util/oxim2tab/gencin.c:105
+#: src/util/oxim2tab/gencin.c:143 src/util/oxim2tab/gencin.c:264
+#, c-format
+msgid "%s(%d): arguement expected.\n"
+msgstr ""
+
+#: src/util/oxim-conv/gencin.c:130 src/util/oxim2tab/gencin.c:80
+#, c-format
+msgid "%s(%d): too many selection keys defined.\n"
+msgstr ""
+
+#: src/util/oxim-conv/gencin.c:174 src/util/oxim2tab/gencin.c:123
+#, c-format
+msgid ""
+"SCIM table \"%s\" line %d: too many selection keys defined. Use default "
+"selection keys \"%s\".\n"
+msgstr ""
+
+#: src/util/oxim-conv/gencin.c:203 src/util/oxim2tab/gencin.c:147
+#, c-format
+msgid "%s(%d): too many end keys defined.\n"
+msgstr ""
+
+#: src/util/oxim-conv/gencin.c:248
+#, c-format
+msgid "%s(%d): setting->'%s %s' is already defined, overwrite it.\n"
+msgstr ""
+
+#: src/util/oxim-conv/gencin.c:288 src/util/oxim-conv/gencin.c:409
+#: src/util/oxim2tab/gencin.c:179 src/util/oxim2tab/gencin.c:289
+#, c-format
+msgid "%s(%d): illegal key \"%c\" specified.\n"
+msgstr ""
+
+#: src/util/oxim-conv/gencin.c:300
+#, c-format
+msgid "%s(%d): key \"%c\" is already in used, overwrite it.\n"
+msgstr ""
+
+#: src/util/oxim-conv/gencin.c:568 src/util/oxim2tab/gencin.c:451
+#, c-format
+msgid "%s(%d): unknown command: %s, ignore.\n"
+msgstr ""
+
+#: src/util/oxim-conv/gencin.c:667
+#, c-format
+msgid "number of locale: %d\n"
+msgstr ""
+
+#: src/util/oxim-conv/gencin.c:669
+#, c-format
+msgid "number of settings: %d\n"
+msgstr ""
+
+#: src/util/oxim-conv/gencin.c:671 src/util/oxim2tab/gencin.c:460
+#, c-format
+msgid "number of keyname: %d\n"
+msgstr ""
+
+#: src/util/oxim-conv/gencin.c:673 src/util/oxim2tab/gencin.c:462
+#, c-format
+msgid "max length of keystroke: %d\n"
+msgstr ""
+
+#: src/util/oxim-conv/gencin.c:675 src/util/oxim2tab/gencin.c:464
+#, c-format
+msgid "number of keystroke code defined: %d\n"
+msgstr ""
+
+#: src/util/oxim-conv/gencin.c:677 src/util/oxim2tab/gencin.c:466
+#, c-format
+msgid "number of char defined: %d\n"
+msgstr ""
+
+#: src/util/oxim-conv/gencin.c:679
+#, c-format
+msgid "number of phrase define: %d\n"
+msgstr ""
+
+#: src/util/oxim-conv/oxim-conv.c:156 src/util/oxim2tab/oxim2tab.c:156
+#, c-format
+msgid "Can not write to file '%s'.\n"
+msgstr ""
+
+#: src/util/oxim-conv/oxim-conv.c:161 src/util/oxim2tab/oxim2tab.c:161
+#, c-format
+msgid "cin file: %s, version %s.\n"
+msgstr ""
+
+#: src/util/oxim-conv/oxim-conv.c:191 src/util/oxim2tab/oxim2tab.c:191
+#, c-format
+msgid ""
+"OXIM convert table tool. Version (oxim %s)\n"
+"Usage: %s <-c new cin file> <.cin file|.txt.in(SCIM table source)>\n"
+"\n"
+msgstr ""
+
+#: src/util/oxim-conv/oxim-conv.c:197 src/util/oxim2tab/oxim2tab.c:197
+#, c-format
+msgid ""
+"OXIM convert table tool. Version (oxim %s)\n"
+"Usage: %s [-o output] <.cin file|.txt.in(SCIM table source)> [-c new cin "
+"file]\n"
+"\n"
+msgstr ""
+
+#: src/util/oxim-conv/oxim-conv.c:252 src/util/oxim2tab/oxim2tab.c:252
+#, c-format
+msgid "OXIM convert table tool. Version (oxim %s)\n"
+msgstr ""
+
+#: src/util/oxim-conv/oxim-conv.c:255 src/util/oxim2tab/oxim2tab.c:255
+msgid "no cin file specified.\n"
+msgstr ""
+
+#: src/util/oxim2tab/gencin.c:184
+#, c-format
+msgid "%s(%d): key \"%c\" is already in used.overwrite it.\n"
+msgstr ""
+
+#: src/util/oxim2tab/gencin.c:456
+#, c-format
+msgid "%s: command \"%s\" not specified.\n"
+msgstr ""
+
+#: src/util/oxim2tab/gencin.c:468
+#, c-format
+msgid "number of word: %d\n"
+msgstr ""
+
+#: src/util/oxim2tab/gencin.c:470
+#, c-format
+msgid "memory model: %d\n"
+msgstr ""
+
+#: src/ogim/ogimcontext.c:123
+msgid ""
+"assemble\n"
+"word"
+msgstr ""
+
+#: src/ogim/ogim.c:15
+msgid "OXIM Input Method System"
+msgstr ""
+
+#: src/modules/unicode/unicode.c:222
+msgid "This is the Unicode input method module.\n"
+msgstr ""
+
+#: src/modules/gen-inp-v1/gen-inp-v1.c:52 src/modules/gen-inp/gen-inp.c:53
+#, c-format
+msgid "gen_inp: %s: invalid tab file.\n"
+msgstr ""
+
+#: src/modules/gen-inp-v1/gen-inp-v1.c:60 src/modules/gen-inp/gen-inp.c:60
+#: src/modules/gen-inp/gen-inp.c:108
+#, c-format
+msgid "gen_inp: %s: reading error.\n"
+msgstr ""
+
+#: src/modules/gen-inp-v1/gen-inp-v1.c:67
+#, c-format
+msgid "gen_inp: %s: checksum error.\n"
+msgstr ""
+
+#: src/modules/gen-inp-v1/gen-inp-v1.c:265
+#, c-format
+msgid "gen_inp: %s: reading offset table error.\n"
+msgstr ""
+
+#: src/modules/gen-inp-v1/gen-inp-v1.c:1554
+msgid "This is the general input method module.\n"
+msgstr ""
+
+#: src/modules/gen-inp/gen-inp.c:64
+#, c-format
+msgid "gen_inp: %s: invalid version.\n"
+msgstr ""
+
+#: src/modules/gen-inp/gen-inp.c:1446
+msgid ""
+"This is the general input method module. It is the most generic\n"
+"module which can read the IM table (\".tab\" file) and perform\n"
+"the correct operations of the specific IM. It also can accept a\n"
+"lot of options from the \"oximrc\" file to detailly control the\n"
+"behavior of the IM. We hope that this module could match most of\n"
+"your Chinese input requirements.\n"
+"\n"
+"This module is free software, as part of oxim system.\n"
+msgstr ""
+
+#: src/modules/chewing/chewing2.c:547 src/modules/chewing/chewing.c:526
+msgid ""
+"Chewing : a smart phonetic input method module for OXIM.\n"
+"By Lu-chuan Kung <lckung@iis.sinica.edu.tw>,\n"
+"Kang-pen Chen <kpchen@iis.sinica.edu.tw>, and others.\n"
+msgstr ""
+
+#: src/lib/oxim_module.c:102
+#, c-format
+msgid "dlerror: %s\n"
+msgstr ""
+
+#: src/lib/oxim_module.c:115
+msgid "module symbol \"module_ptr\" not found.\n"
+msgstr ""
+
+#: src/lib/oxim_module.c:120
+#, c-format
+msgid "invalid module type, type %d required.\n"
+msgstr ""
+
+#: src/lib/oxim_module.c:125
+#, c-format
+msgid "invalid module version: %s, version %s required.\n"
+msgstr ""
+
+#: src/lib/oxim_module.c:131
+#, c-format
+msgid "cannot load module \"%s\", ignore.\n"
+msgstr ""
+
+#: src/lib/oxim_module.c:188
+#, c-format
+msgid "module \"%s\":"
+msgstr ""
+
+#: src/lib/oxim_module.c:192
+msgid "no comments available.\n"
+msgstr ""
+
+#: src/lib/oxim_module.c:227
+#, c-format
+msgid "undefined symbol \"%s\" in module \"%s\", ignore.\n"
+msgstr ""
+
+#: src/lib/oxim_module.c:250
+#, c-format
+msgid "invalid objname \"%s\" for module \"%s\", ignore.\n"
+msgstr ""
+
+#: src/lib/oxim_module.c:301
+#, c-format
+msgid "cannot load IM: %s, ignore.\n"
+msgstr ""
+
+#: src/lib/oxim_module.c:738
+#, c-format
+msgid "Scan dir: \"%s\" No any files!\n"
+msgstr ""
+
+#: src/lib/oxim_module.c:787
+#, c-format
+msgid "Can not change dir to \"%s\"\n"
+msgstr ""
+
+#: src/lib/oxim_settings.c:406
+#, c-format
+msgid "'%s' not found.\n"
+msgstr ""
+
+#: src/lib/oxim_set_locale.c:58
+#, c-format
+msgid "C locale \"%s\" is not supported by your system.\n"
+msgstr ""
+
+#: src/lib/oxim_perr.c:45
+#, c-format
+msgid "%s: warning: "
+msgstr ""
+
+#: src/lib/oxim_perr.c:48
+#, c-format
+msgid "%s internal: warning: "
+msgstr ""
+
+#: src/lib/oxim_perr.c:51
+#, c-format
+msgid "%s: error: "
+msgstr ""
+
+#: src/lib/oxim_perr.c:55
+#, c-format
+msgid "%s internal: error: "
+msgstr ""
+
+#: src/lib/oxim_malloc.c:27
+msgid "oxim_malloc: memory exhaust.\n"
+msgstr ""
+
+#: src/lib/oxim_malloc.c:39
+msgid "oxim_realloc: memory exhaust.\n"
+msgstr ""
+
+#: src/lib/oxim_open_file.c:28
+#, c-format
+msgid "cannot open file:  %s , errno=%d.\n"
+msgstr ""
+
+#: src/gtk-immodule/gtkimcontextoxim.c:283
+msgid "IM Preedit style"
+msgstr ""
+
+#: src/gtk-immodule/gtkimcontextoxim.c:284
+msgid "How to draw the input method preedit string"
+msgstr ""
+
+#: src/gtk-immodule/gtkimcontextoxim.c:292
+msgid "IM Status style"
+msgstr ""
+
+#: src/gtk-immodule/gtkimcontextoxim.c:293
+msgid "How to draw the input method statusbar"
+msgstr ""
+
+#: src/gtk-immodule/im-oxim.c:27
+msgid "Open X Input Method"
+msgstr ""

@@ -1,0 +1,11 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+moduledir=@libdir@/oxim/modules
+
+Name: oxim
+Description: 
+Version: @VERSION@
+Libs: -L${libdir} -loxim
+Cflags: -I${includedir}/oxim
