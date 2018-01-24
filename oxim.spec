@@ -4,7 +4,7 @@
 Summary: Open X Input Method Server.
 Name: oxim
 Version: 1.5.4
-Release: 8%{?dist}
+Release: 8
 License: GPL
 Group: System/Internationalization
 Source0: %{name}-%{version}.tar.gz

@@ -251,7 +251,7 @@ msgstr ""
 #: src/xim/oxim_main.c:130
 #, c-format
 msgid "locale \"%s\"\n"
-msgstr "語系 \"%s\"\n"
+msgstr "語區 \"%s\"\n"
 
 #: src/util/oxim-conv/gencin.c:57 src/util/oxim-conv/gencin.c:70
 #: src/util/oxim-conv/gencin.c:83 src/util/oxim-conv/gencin.c:108
@@ -306,7 +306,7 @@ msgstr "%s(%d): 忽略了未知的命令: %s。\n"
 #: src/util/oxim-conv/gencin.c:639
 #, c-format
 msgid "number of locale: %d\n"
-msgstr "有 %d 個語系\n"
+msgstr "有 %d 個語區\n"
 
 #: src/util/oxim-conv/gencin.c:641
 #, c-format
@@ -545,7 +545,7 @@ msgstr "'%s' 未發現。\n"
 #: src/lib/oxim_set_locale.c:58
 #, c-format
 msgid "C locale \"%s\" is not supported by your system.\n"
-msgstr "C 的語系表示 \"%s\" 在您的系統中並不支援\n"
+msgstr "C 的語區表示 \"%s\" 在您的系統中並不支援\n"
 
 #: src/lib/oxim_perr.c:45
 #, c-format

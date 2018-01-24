@@ -169,8 +169,8 @@
 	  因unicode輸入法模組的名稱已支援I18N，所以去除設定檔中的AliasName設定值。
 
 	* po/LINGUAS po/zh_CN.po po/zh_TW.po :
-	  針對多國語系I18N的內容變更。
-	  新增zh_HK語系。
+	  針對多國語區I18N的內容變更。
+	  新增zh_HK語區。
 
 	* src/lib/oxim_check_file.c :
 	  oxim_check_setup_file_exist函式：修改記憶體宣告方式( char *s=strdup(...) => char s[BUFFER_LEN] )
@@ -187,18 +187,18 @@
 
 	* src/util/oxim-conv/gencin.c :
 	  修改轉換程式，使支援新版cin table。
-	  cin主要針對I18N多語系支援而作修改。
+	  cin主要針對I18N多語區支援而作修改。
 
 	* src/xim/gui_menu.c tables/cnscj.cin tables/cnsphone.cin :
-	  針對多國語系I18N的內容變更。
+	  針對多國語區I18N的內容變更。
 
 	* src/xim/gui_xcin.c :
-	  針對多國語系I18N的內容變更。
+	  針對多國語區I18N的內容變更。
 	  修正切換到XCIN輸入風格時，用滑鼠中鍵點輸入視窗有時候造成整個X-Window死當的情況。
 
 2008-11-12 Wind <yc.yan@ossii.com.tw>
 	* src/lib/oxim_module.c :
-	  支援多國語系相關修正。
+	  支援多國語區相關修正。
 
 2008-11-10 Wind <yc.yan@ossii.com.tw>
 	* po/LINGUAS :
@@ -207,7 +207,7 @@
 2008-11-06 Wind <yc.yan@ossii.com.tw>
 	* src/lib/oxim_module.c src/util/oxim-conv/gencin.c
 	  src/util/oxim-conv/oxim-conv.c :
-	  修改讀取輸入法表格中文名稱的方式，使之支援多國語系。
+	  修改讀取輸入法表格中文名稱的方式，使之支援多國語區。
 
 	* src/include/oximtool.h src/lib/oxim_check_file.c
 	  src/xim/gui_menu.c :
@@ -1056,7 +1056,7 @@
 	  新增程式。
 
 	* src/xim/xim.c :
-	  修正配置語系列表記憶體時，沒有清空內容，容易引 malloc() 錯誤。
+	  修正配置語區列表記憶體時，沒有清空內容，容易引 malloc() 錯誤。
 
 	* src/include/gui.h src/include/oximtool.h
 	  src/lib/oxim_config.c src/lib/oxim_get_line.c src/xim/gui.c
