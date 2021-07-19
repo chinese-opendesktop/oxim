@@ -375,7 +375,7 @@
 
 2007-1-30 Firefly <firefly@opendesktop.org.tw>
 	* configure.ac src/include/IC.h src/xim/xim_IC.c :
-	  修正部份 JAVA 應用程式會卡死的問題。
+	  修正部分 JAVA 應用程式會卡死的問題。
 
 	* src/xim/xim.c :
 	  xim server 原先只攔截 KeyPress 改成同時攔截 KeyPress 與 KeyRelease。
@@ -1409,7 +1409,7 @@
 	  因應符號輸入視窗，需要修改相關程式與編譯設定。
 
 	* src/xim/gui_menu.c src/xim/gui_preedit.c :
-	  Event 處理部份更新。
+	  Event 處理部分更新。
 
 2006-4-02  Firefly <firefly@opendesktop.org.tw>
 	* src/xim/images/sideback_l.xpm :
