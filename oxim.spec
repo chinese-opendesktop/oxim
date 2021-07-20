@@ -8,8 +8,6 @@ Release: 9
 License: GPL
 Group: System/Internationalization
 Source0: %{name}-%{version}.tar.gz
-Patch0: oxim-1.4.4-6.start.config.patch
-Autoreq: no
 Requires: zlib, libXpm >= 2.0.0, libXtst >= 1.0.0, libXft >= 2.0, libXext >= 1.0.0, libXrender >= 0.9
 Requires(post,preun): /usr/sbin/alternatives
 BuildRequires: gcc-c++, zlib-devel, libchewing-devel >= 0.2.6, libXpm-devel >= 2.0.0, libXtst-devel >= 1.0.0, libXft-devel >= 2.0, libXext-devel, gtk2-devel, sunpinyin-devel >= 2.0.0
@@ -74,7 +72,7 @@ chewing-module : Core tables input method.
 %prep
 %setup -q
 %ifarch %{arm}
-%patch0 -p1 -b .orig
+    sed -i 's|# DISABLE_IMSETTINGS=yes|DISABLE_IMSETTINGS=yes|' oxim-start.sh.in
 %endif
 
 %build
@@ -111,11 +109,9 @@ alternatives --remove xinputrc %{_sysconfdir}/X11/xinit/xinput.d/oxim 2> /dev/nu
 
 %{_bindir}/update-gtk-immodules %{_host} || :
 
-%if 0%{?fedora}  >=15
 #which gtk-query-immodules-3.0-32 && gtk-query-immodules-3.0-32 --update-cache
 #which gtk-query-immodules-3.0-64 && gtk-query-immodules-3.0-64 --update-cache
 %{_bindir}/gtk-query-immodules-3.0-%{__isa_bits} --update-cache || :
-%endif
 
 %preun
 if [ "$1" = 0 ]; then
@@ -126,9 +122,7 @@ fi
 
 %{_bindir}/update-gtk-immodules %{_host} || :
 
-%if 0%{?fedora}  >=15
 %{_bindir}/gtk-query-immodules-3.0-%{__isa_bits} --update-cache || :
-%endif
 /sbin/ldconfig > /dev/null 2>&1
 
 %clean 
