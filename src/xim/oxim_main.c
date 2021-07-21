@@ -62,10 +62,10 @@ oxim_setlocale(void)
     oxim_core.lc_ctype = (char *)strdup(loc_return);
     oxim_set_lc_messages("", loc_return, 128);
 
-    if (XSupportsLocale() != True)
-        oxim_perr(OXIMMSG_ERROR, 
-	     N_("X locale \"%s\" is not supported by your system.\n"),
-	     oxim_core.lc_ctype);
+//    if (XSupportsLocale() != True)
+//        oxim_perr(OXIMMSG_ERROR, 
+//	     N_("X locale \"%s\" is not supported by your system.\n"),
+//	     oxim_core.lc_ctype);
 }
 
 static void
