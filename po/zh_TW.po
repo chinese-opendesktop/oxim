@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Free Software Foundation, Inc.
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# This file is distributed under the same license as the oxim package.
+# wind <yc.yan@ossii.com.tw>, 2008.
 #
 msgid ""
 msgstr ""
@@ -316,17 +316,17 @@ msgstr "有 %d 個設定\n"
 #: src/util/oxim-conv/gencin.c:643 src/util/oxim2tab/gencin.c:460
 #, c-format
 msgid "number of keyname: %d\n"
-msgstr "有 %d 個keyname\n"
+msgstr "有 %d 個按鍵名稱\n"
 
 #: src/util/oxim-conv/gencin.c:645 src/util/oxim2tab/gencin.c:462
 #, c-format
 msgid "max length of keystroke: %d\n"
-msgstr "最大長度的keystroke: %d\n"
+msgstr "最大長度的按鍵組合: %d\n"
 
 #: src/util/oxim-conv/gencin.c:647 src/util/oxim2tab/gencin.c:464
 #, c-format
 msgid "number of keystroke code defined: %d\n"
-msgstr "number of keystroke code defined: %d\n"
+msgstr "定義了 %d 個按鍵組合: %d\n"
 
 #: src/util/oxim-conv/gencin.c:649 src/util/oxim2tab/gencin.c:466
 #, c-format
